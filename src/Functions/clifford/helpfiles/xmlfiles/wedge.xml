@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "wedge" overload = "false">
+<short>Clifford wedge product</short>
+<long>
+<para>
+<code>wedge(x,y)</code> computes the wedge product between two elements <code>x</code> and <code>y</code>.
+The function takes an arbitrary number of parameters, because the wedge
+product is associative.
+Thus <code>wedge(x, y, z) == wedge(wedge(x, y), z)</code> as demonstrated
+in the second example below.
+</para>
+</long>
+<examples>
+<precode>
+>> clifford_signature(1,1)
+>> x = clifford(1,2,3,4)
+ 
+x =
+ 
+   1.0000 e0
+ + 2.0000 e1 + 3.0000 e2
+ + 4.0000 e12
+ 
+>> y = clifford(5,6,7,8)
+ 
+y =
+ 
+   5.0000 e0
+ + 6.0000 e1 + 7.0000 e2
+ + 8.0000 e12
+ 
+>> wedge(x,y)
+ 
+ans =
+ 
+   5.0000 e0
+ + 16.0000 e1 + 22.0000 e2
+ + 24.0000 e12
+
+Second example:
+ 
+>> clifford_signature(2,1)
+>> x = randm; y = randm; z = randm;
+>> wedge(x, y, z) == wedge(wedge(x, y), z)
+
+ans =
+
+  logical
+
+   1
+ 
+</precode>
+</examples>
+<seealso>
+</seealso>
+<!--<references>
+</references>-->
+</function>
+
+<!-- $Id: wedge.xml 270 2021-07-11 19:42:06Z sangwine $ -->

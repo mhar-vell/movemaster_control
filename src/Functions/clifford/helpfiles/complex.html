@@ -1,0 +1,37 @@
+<!-- Generated automatically from an XML file of the same name.
+     Copyright: Stephen J. Sangwine and Eckhard Hitzer, 2011-2021.
+--><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>complex :: Functions (Clifford Multivector Toolbox Function Reference)
+</title><link rel="stylesheet" href="clifstyle.css" type="text/css"></head><body><h1>Clifford Function Reference</h1><h2>complex</h2>
+<p>Construct a complex multivector from real multivectors.<br>(Clifford overloading of standard MATLAB&reg; function)
+</p>
+<h2>Syntax</h2><p><tt>q = complex(a,b)</tt></p>
+<h2>Description</h2>
+<p>
+<tt>complex</tt> takes two multivector arguments and constructs a
+complexified multivector with the first multivector as real part, and the
+second as the imaginary part. The result is equivalent to
+<tt>a + i * b</tt> (where <tt>i</tt> is the standard MATLAB&reg;
+complex operator).
+</p>
+<p>
+Once constructed, a complexified multivector can be separated into
+complex parts or grades or into two multivectors (real and imaginary).
+It is of course also possible to construct complexified multivectors by other
+means, using the constructor function supplied with complex arguments.
+</p>
+<p>
+The two arguments must be of the same size, unless one is scalar. If this
+is the case the scalar argument is promoted in size to match the non-scalar
+argument. (This behaviour matches the way the corresponding MATLAB&reg;
+function operates.)
+</p>
+
+<h2>Examples</h2>
+<pre>
+EXAMPLE TO BE INSERTED
+</pre>
+
+<h2>See Also</h2>MATLAB&reg; function: <a href="matlab:doc complex">complex</a><br>Clifford functions: <a href="real.html">real</a>, <a href="imag.html">imag</a><br>
+<h4>(c) 2011-2021 Stephen J. Sangwine and Eckhard Hitzer.</h4><p><a href="license.html">License terms.</a></p></body></html>

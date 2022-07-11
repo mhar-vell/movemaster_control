@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "randm" overload = "false">
+<short>Make random clifford multivector.</short>
+<long>
+<para>
+<code>randm</code> creates random multivectors of unit norm in the current
+algebra.
+</para>
+    It accepts parameters similar to the &matlab; functions <code>rand</code>
+    and <code>randn</code> to specify the dimensions of the multivector array
+    (default 1-by-1).
+    <para>
+        <para>
+            In addition, it accepts an optional final pair of parameters in
+            the form <code>'sparse', k</code> where k is a numeric value between
+            1/m and 1, where m is the number of elements in a multivector of
+            the current algebra. In this case, the result is a multivector
+            with some empty elements (in fact (1 - k) * m empty elements).
+        </para>
+    </para>
+</long>
+<examples>
+<precode>
+>> randm(2)
+ 
+ans =
+ 
+     2x2 Cl(0,2) multivector matrix
+ 
+>> show(ans)
+ 
+ans =
+ 
+e0 *
+ 
+   -0.6475    0.0383
+    0.7220   -0.3985
+
++ e1 *
+ 
+    0.5411    0.8745
+   -0.4002   -0.1258
+
++ e2 *
+ 
+   -0.3898   -0.3179
+    0.5512    0.0039
+
++ e12 *
+ 
+    0.3687   -0.3643
+    0.1212   -0.9085
+
+>> randm('sparse', 0.5)
+ 
+ans =
+ 
+   0.9444 e0
+ + 0.3288 e12
+</precode>
+</examples>
+<!--<references>
+</references>-->
+</function>
+
+<!-- $Id: randm.xml 284 2021-07-24 20:26:29Z sangwine $ -->

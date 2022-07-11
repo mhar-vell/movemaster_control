@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "log" overload = "true">
+<short>Natural logarithm</short>
+<syntax>Y = log(X)</syntax>
+<long>
+<para>
+<code>log(X)</code> computes the natural logarithm of the elements of the
+multivector array <code>X</code>.
+</para>
+<para>
+Pending a better algorithm the current implementation uses the &matlab;
+    <code>logm</code> function on the isomorphic matrix of each element of
+    <code>X</code>.
+</para>
+</long>
+<seealso>
+<matlabfun name = "log"/>
+<cliffun name = "exp"/>
+</seealso>
+</function>
+
+<!--$Id: log.xml 270 2021-07-11 19:42:06Z sangwine $-->

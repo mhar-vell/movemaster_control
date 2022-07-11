@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "exp" overload = "true">
+<short>Exponential</short>
+<syntax>Y = exp(X)</syntax>
+<long>
+<para>
+<code>exp(X)</code> computes the exponential of each element of its argument.
+</para>
+</long>
+<examples>
+<precode>
+>> clifford_signature(0,3)
+>> exp(1 + e1 + e12)
+ 
+ans =
+ 
+   0.4239 e0 
+ + 1.8986 e1 
+ + 1.8986 e12
+</precode>
+</examples>
+<seealso>
+<matlabfun name = "exp"/>
+</seealso>
+</function>
+
+<!--$Id: exp.xml 270 2021-07-11 19:42:06Z sangwine $-->

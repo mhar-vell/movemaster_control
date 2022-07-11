@@ -1,0 +1,35 @@
+<!-- Generated automatically from an XML file of the same name.
+     Copyright: Stephen J. Sangwine and Eckhard Hitzer, 2011-2021.
+--><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>coefficients :: Functions (Clifford Multivector Toolbox Function Reference)
+</title><link rel="stylesheet" href="clifstyle.css" type="text/css"></head><body><h1>Clifford Function Reference</h1><h2>coefficients</h2>
+<p>Returns the coefficients of the multivector in a cell array.</p>
+<h2>Description</h2>
+<p>
+    <tt>c = coefficients(m)</tt> returns in <tt>c</tt> the numeric
+    coefficients of the multivector <tt>m</tt> as a cell array. Some of
+    the cells may be empty, corresponding to coefficients with zero values.
+</p>
+
+<h2>Examples</h2>
+<pre>
+&gt;&gt; m = randn(2) .* e2
+ 
+m = 2x2 Cl(0,2) multivector matrix
+ 
+&gt;&gt; c = coefficients(m)
+
+c = 1&times;4 cell array
+
+    {0&times;0 double}    {0&times;0 double}    {2&times;2 double}    {0&times;0 double}
+
+&gt;&gt; c{3}
+
+ans = 1.0347   -0.3034
+      0.7269    0.2939
+</pre>
+
+<h2>See Also</h2>Clifford function: <a href="part.html">part</a><br>
+
+<h4>(c) 2011-2021 Stephen J. Sangwine and Eckhard Hitzer.</h4><p><a href="license.html">License terms.</a></p></body></html>

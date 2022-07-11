@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "imag" overload = "true">
+<short>Imaginary part of a complex multivector</short>
+<syntax>Y = imag(X)</syntax>
+<long>
+<para>
+<code>imag(X)</code> returns the imaginary part of a complex multivector
+If <code>X</code> is a real multivector <code>imag(X)</code> returns zero.
+</para>
+</long>
+<examples>
+<precode>
+EXAMPLE TO BE INSERTED
+</precode>
+</examples>
+<seealso>
+<matlabfun name = "imag"/>
+<cliffun name = "real"/>
+</seealso>
+</function>
+
+<!--$Id: imag.xml 270 2021-07-11 19:42:06Z sangwine $-->

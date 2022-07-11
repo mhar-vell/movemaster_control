@@ -1,0 +1,343 @@
+--------------------------------------------------------------
+           Clifford Multivector Toolbox for Matlab
+     http://clifford-multivector-toolbox.sourceforge.net/
+--------------------------------------------------------------
+Copyright (c) 2013-2021 Stephen J. Sangwine & Eckhard Hitzer
+Email: sangwine@users.sourceforge.net, hitzer@icu.ac.jp
+--------------------------------------------------------------
+
+                     Release Notes
+
+Version 1.6  1 November 2021
+
+This release marks the 10th year of development of this toolbox (we started
+work on it in 2011), and it provides a big improvement in speed when
+computing with larger algebras (p + q + r > 10).
+
+The earliest Matlab version supported is now 9.5 (R2018b). This is because
+we have removed some calls to bsxfun, instead relying on implicit singleton
+expansion which was introduced with release R2016b of Matlab. Secondly, the
+critical private function suppress_zeros uses a syntax for the all function
+that was introduced with R2018b. The test code has been updated to check
+for 9.5. If you use an earlier version of Matlab you may see code crashes
+or incorrect results, and you should either upgrade Matlab, or revert to
+version 1.5 of this toolbox.
+
+The descriptor format has been altered to make the sign and index tables
+conditional on the size of the algebra. These are now stored explicitly, as
+before, for algebras with n <= 10, but computed dynamically for larger
+algebras (the entries in the descriptor are empty for larger algebras). Two
+new functions clifford_index and clifford_sign now provide the index and
+sign, looking these up from the descriptor when present, or computing them
+dynamically otherwise. These two functions are called by the multiplication
+functions mtimes and times, so the multiplication functions are unaware of
+the difference between lookup and dynamic computation.
+
+A consequential change is that the cache format has been changed (to v2).
+The new format vastly reduces the storage space needed for the cache. Users
+upgrading from earlier versions will see that when an algebra is
+initialised new cache files are created. The old cache (v1) can be deleted,
+but leaving it does no harm apart from using disk space.
+
+The test code can now check larger algebras (previously not feasible). Only
+a subset of the multiplication table is tested, in order to reduce run time
+to manageable amounts. The test code will take many minutes even on a
+multi-core machine with the parallel processing toolbox.
+
+The multiplication functions times and mtimes have been re-coded to use a
+greater level of vectorisation, eliminating a switch statement from an
+inner loop and handling zero signs more efficiently. This results in a
+reduction in runtime of between 15% and 20%. A few other functions have had
+the same treatment.
+
+The size function has been modified to speed it up on larger algebras.
+
+The parameterless function files e0, e1 etc., now use a persistent variable
+so that on second and subsequent calls *in the same algebra*, they do not
+need to recreate the multivector from scratch.
+
+The randm function now has an optional final parameter pair to permit the
+creation of 'sparse' multivectors (with some elements empty). This makes it
+possible to run test code in large algebras in reasonable time by not
+having to process full multivectors (which can have 65536 elements in
+algebras with n = 16).
+
+The three functions for computing involutions (grade_involution,
+conj/clifford_conjugate, and reverse) now have test code and have been
+implemented with faster algorithms.
+
+Version 1.5  27 May 2020
+
+This is a minor release with only a few changes.
+
+Additional code has been added to the 'dump' function (this is a diagnostic
+function that outputs the content of a multivector for debugging purposes).
+
+Some performance improvements were made to multiple files by using cellfun.
+
+A new function 'coefficients' was added to output the coefficients of a
+multivector as a MATLAB cell array.
+
+The char function was modified to add the complex 'i' in cases where the
+multivector has complex coefficients.
+
+Version 1.4  4 June 2019
+
+The computation of multiplication tables for a new algebra has been speeded
+up by more than a factor of 100 by writing new vectorised code for the
+function clifford_sign_table. This makes the initialisation of algebras
+with n up to 16 much more feasible (provided enough memory and disk space
+is available to store the tables).
+
+The cache format has changed: descriptor information about an algebra is
+now split into two parts stored in separate cache files. The parts of the
+descriptor which depend on n but not on (p,q,r) are now written separately,
+and do not have to be initialised or stored for every algebra of the same
+dimension. This is mainly to save disk space with large algebras where the
+index table can take GB of disk. Further the index table is now saved in
+upper triangular form, saving just over half the disk space. Two latent
+bugs in the index and sign tables have been fixed. These bugs would
+manifest only with n = 16, at the limit of the size of algebra that the
+toolbox can currently handle. To fix it, the index table now stores one
+less than the previous value in order to fit all possible 16-bit indices
+within a uint16. The toolbox has successfully initialized an algebra with
+n=16 using this new code. Further the cache subfolder is now named v1. This
+may change with a later release, but only if the cache file formats change,
+when the folder name will become v2, v3 etc. This means cache files may be
+saved and used with a new version of the toolbox (useful for very large
+algebras where the computation time is long).
+
+The parameterless function files e0.m, e1.m, etc., are now created offline
+and distributed with the toolbox, and not by the clifford_signature
+function as before. The script file that creates the function files is
+called clifford_parameterless_functions and the list of functions to be
+created is defined in parameterless.lst. If the default list of functions
+is not what you need, you can customise the list file and run the script
+yourself to generate as many files as you need, including those with
+non-canonic index orders such as e21 (this is made possible by a change to
+the clifford constructor - see below).
+
+The clifford constructor function will now accept a permutation of a
+multivector element as an argument and return a multivector element of the
+correct sign. For example, clifford('e312') will yield -1.0000 e123.
+
+The notation clifford.empty() may be used to construct multivectors with
+empty components. This function now supports specifications of size, as in
+Matlab, and an optional string parameter to specify the class of the
+components, for example clifford.empty([1, 0], 'int8').
+
+Two new functions: symmetric and antisymmetric; extract those grades of a
+multivector which do or do not change sign under reversion. They correspond
+to the symmetric and antisymmetric components of the isomorphic real matrix
+representation of the multivector.
+
+Two new inner product functions dip and hip implement two inner products
+due to Leo Dorst and David Hestenes respectively.
+
+The logarithm, square root, matrix exponential, matrix logarithm, and
+matrix square root have been implemented using isomorphisms and test code
+has been added. A consequence is that m^n now works for multivectors (and
+numeric values), so that e1^3 or 3^e1 will work. CAUTION - the results may
+not make sense in all cases, because of the logarithm implementation.
+
+Test code has been added for the exponential function using isomorphisms to
+permit the Matlab expm function to be used as a reference result.
+
+The isomorphism function now works correctly for matrices of multivectors
+returning a block matrix in which each multivector in the original matrix
+is represented by a block in the result matrix. (This does not work for
+arrays with more than two dimensions.)
+
+The odd and even functions were fixed to give correct results when one or
+more of the selected grades is empty (they previously returned an empty
+multivector under these circumstances).
+
+Version 1.3  31 December 2017
+
+The test code now runs tests on each algebra in parallel using a parallel
+pool, if available (this requires a multicore processor and the Parallel
+Processing Toolbox). The output has been adapted to support parallel
+execution by prefixing each line with the algebra signature.
+
+We have added another case to the multivector inverse in the function
+power.m, using a recent new algorithm based on linear combinations of
+involutions due to Acus and Dargys for p+q = 6. This speeds up the
+computation of multivector inverses for all algebras above p+q = 5. 
+
+The clifford_basis function has been speeded-up.
+
+The exponential function has been implemented using contributed code by
+Harry Elman.
+
+We have now implemented isomorphisms that permit construction of real matrix
+representations of multivector arrays, in all algebras with p<8, q<8. They
+may work for larger algebras given enough memory and time. The reverse is
+also implemented. A user-level function called 'iso' maps from the current
+algebra to another algebra and switches to the new algebra. If none is
+specified the result is a Matlab real array. This work also relies on code
+contributed by Harry Elman.
+
+The scalar_product function and its test code have been corrected: previously
+the result was erroneous in some cases.
+
+The Matlab functions complex/real/imag have been overloaded for multivectors.
+
+Cache files are now written in Matlab MAT file version 7.3 format, to enable
+larger algebras to be initialised (where the descriptor would be larger than
+2GB in size).
+
+The parameterless function files representing basis elements of the algebra
+other than the basis vectors and pseudoscalar, are no longer created in
+algebras with greater than 12 basis vectors. See clifford_signature.m for
+reasons.
+
+Performance improvements have been made in some important functions such as
+times and mtimes, by replacing cellfun calls with explicit loops, in some
+cases enabling a short cut to be taken when a result can be determined early.
+In some other cases, performance has been improved by using cellfun calls
+instead of loops.
+
+Version 1.2  10 May 2017
+
+The subsasgn function has been corrected to deal with cases like assignment
+of empty to a row or column of a multivector array, and cases where some
+elements of the assignment source or destination were empty.
+Thanks to Radek Tichy for pointing out cases where this function failed.
+
+Test code has been added for Matlab functions known to work with multivector
+inputs. This code is mostly copied from the Quaternion Toolbox for Matlab.
+While debugging it, a change was made to the .* and + functions to permit
+singleton expansion by removing a check on the sizes of the parameters. This 
+step follows similar changes made in QTFM to support the new functionality
+of Matlab since release R2016b. Further work may be needed to permit
+implicit singleton expansion in other functions. The list of Matlab functions
+which work with multivectors has been corrected.
+
+The mean function has been added to the toolbox (in order to support the
+tests above on the std and var functions).
+
+The end function has now been implemented for clifford multivector arrays.
+Quite why this was not done before is not known. So now the notation
+M(1:2:end) will work for a multivector array M.
+
+Version 1.1  21 December 2016
+
+The code for the wedge function has been corrected when intermediate
+results gave empty arrays. The correction means that wedge(e1, e2) now
+gives e12 as expected and not an empty array as it did in prior versions.
+Test code for the wedge function has also been added.
+
+Version 1.0  23 August 2016
+
+This release of the toolbox now includes documentation in the form of help
+files which are viewable in the Matlab online documentation browser. The
+documentation was created by Ryan Stuart working on a Frontrunner student
+placement funded by the University of Essex.
+
+The clifford_signature function now stores descriptors for each algebra
+that it initialises in a hierarchy of directories, with a directory named
+'cache' as the top-level directory. The implementation of this cache is
+described in the file 'implementation_notes.txt'. This cache speeds up the
+process of initialising an algebra or switching between algebras.
+
+With this release we make available functions to compute the inverses of
+multivectors and matrices of multivectors using the power and inv functions
+and the inline notations x .^ -1 and A ^ -1. This new functionality is the
+subject of a journal paper under review at the time of release, but made
+available as a preprint.
+
+The LU decomposition of a matrix of multivectors is implemented, making use
+of the new functionality to compute multivector inverses.
+
+Other new functions implemented are overloadings of Matlab functions:
+mrdivide (for scalars on the right only), ctranspose.
+
+Version 0.9  28 January 2016
+
+The Matlab function bsxfun has been overloaded for multivectors, making it
+possible for some Matlab functions such as std, cov, var, kron to work with
+multivector arrays. The functions reshape, squeeze and numel have also been
+overloaded. All of these were copied from the Quaternion Toolbox for Matlab
+(QTFM).
+
+The show command now produces slightly better output with a clearer
+mathematical interpretation. Each numeric array is shown as multiplied by
+e0, e1, etc. and summed together to make the full multivector. The previous
+output had = signs which were mathematically meaningless.
+
+Version 0.8
+
+The following new functions have been added (these are overloadings of
+Matlab functions): cast, sum, mpower (matrix power).
+
+Some work has been done to clarify the limits to the size of Clifford
+algebra that can be initialised and a restraint removed that was due to an
+explicit representation of the multiplication tensor. The implementation
+limits are discussed in a new file: implementation_notes.txt. Broadly our
+aim is to ensure that the only limit to algebra size is memory and time and
+not a data type limit within the toolbox.
+
+The left and right contraction functions have been corrected.
+
+A new function clifford_csv_export makes it possible to save the current
+multiplication table to a comma-separated values file. This is intended for
+checking the tables against other software libraries.
+
+The randm function has been significantly speeded up. It was previously
+very slow for large algebras due to the poor algorithm used.
+
+A new private function overloade has been provided to handle implementation
+of overloaded functions where it makes sense to apply the overloaded
+operation to empty components of multivectors. Before this release, some
+functions would raise an error in this case (transpose is an example).
+
+Version 0.7
+
+The clifford_signature function now checks for existing files e0.m, e1.m
+etc, and, if they exist AND their content is correct, it does not overwrite
+them. This avoids pointless timestamp updates on a large number of files,
+but at the same time, ensures that any change made to the contents inserted
+into these files by a future release will automatically update any existing
+files when the appropriate algebra is initialised.
+
+The installation instructions in Read_me.txt have been updated to specify
+not to use the MATLAB toolbox folder for installation (point 1 in the file).
+The test code has also been updated to check that the clifford folder is
+not located inside the MATLAB installation hierarchy.
+
+The clifford_signature function no longer outputs diagnostic information
+when initialising an algebra (this makes the test code run with less output).
+The test code now lists each algebra before it is tested instead. As before
+clifford_signature with no parameters outputs the diagnostic information.
+
+Version 0.6
+
+The file gpl.txt has been added, omitted from the first release.
+
+The eq function has been fixed to return an array rather than a scalar when
+given arrays to compare.
+
+The code has been speeded up compared to release 0.5 by profiling the test
+code and making changes to reduce unnecessary computation and function
+calls.
+
+A bug in the output of the multiplication table which is displayed when the
+signature is initialised has been fixed, and the table is now created from
+the same data that is used to compute multivector multiplications.
+
+Version 0.5
+
+This is the first public release of the toolbox.  At present, functionality
+is limited and there is no documentation provided. We expect to change this
+during 2015 with subsequent releases. Completion of this initial public
+release was made possible by a grant from the London Mathematical Society
+(Research in Pairs Scheme) which funded a visit by Steve Sangwine to ICU in
+Tokyo during March 2015. During the two weeks of the visit, test code was
+written to confirm the multiplication tables are correctly computed for all
+algebras tested. This test code is provided as part of this release. Some
+effort was also expended to speed up the toolbox so that the initial
+release can run the test code in reasonable time. Other work done during
+the visit will be subject to embargo until publication, and will be
+included in a subsequent release.
+
+$Id: Release_notes.txt 303 2021-10-31 16:43:06Z sangwine $

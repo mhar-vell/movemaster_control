@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "e0, e1 etc" overload = "true">
+<short>Clifford basis blades</short>
+<long>
+<para>
+These functions represent the clifford basis blades
+<code>e0</code>, <code>e1</code>, <code>e12</code>, ..., <code>e123</code>.
+They are implemented as parameterless functions. A limited set of these are
+distributed with the toolbox. More can be created by the user if needed -
+see the file <code>clifford_parameterless_functions</code> which is a
+script that can be adapted by editing the file <code>parameterless.lst</code>.
+</para>
+    <para>
+        Only the lexically ordered permutations of these blades are provided
+        as functions, but others can be created by calling the Clifford
+        constructor with a string parameter, e.g. <code>clifford('e312')</code>.
+        Equally, this method can be used to create basis blades for which a
+        parameterless function file does not exist.
+    </para>
+</long>
+<examples>
+<precode>
+>> clifford_signature(3,3)
+>> e1234
+ 
+ans = 1.0000 e1234 
+
+>> clifford('e21') + clifford('e431')
+
+ans = - 1.0000 e12   
+      - 1.0000 e134  
+</precode>
+</examples>
+<seealso>
+<cliffun name = "clifford_signature"/>
+<cliffun name = 'clifford'/>
+</seealso>
+<!--<references>
+</references>-->
+</function>
+
+<!-- $Id: e.xml 298 2021-08-09 20:07:10Z sangwine $ -->

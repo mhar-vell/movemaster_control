@@ -1,0 +1,6 @@
+<launch>
+	<node name="angles" pkg="movemaster_control" type="angles" output="screen" required="true"/>
+	<node name="Arduino_1" pkg="movemaster_control" type="Arduino_1.py"/>
+	<node name="Arduino_2" pkg="movemaster_control" type="Arduino_2.py"/>
+	<node name="Arduino_3" pkg="movemaster_control" type="Arduino_3.py"/>
+</launch>

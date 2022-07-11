@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "iso" overload = "false">
+<short>Convert multivector array to isomorphic array.</short>
+<long>
+<para>
+<code>iso(m)</code> maps the multivector array <code>m</code> to an array of
+    reals (or complex values if the coefficients of the multivector were complex).
+    On return the current Clifford algebra remains that of <code>m</code>.
+</para>
+    <para>
+        <code>iso(m, p, q)</code> maps the multivector array <code>m</code> to a
+        multivector array in algebra with signature <code>(p, q)</code>, if this
+        mapping is possible.
+        On return the current Clifford algebra has signature <code>(p, q)</code>,
+        that is, a call on the <code>iso</code>
+        function has a side-effect of altering the current algebra.
+    </para>
+</long>
+<examples>
+<precode>
+TO BE INSERTED
+</precode>
+</examples>
+</function>
+
+<!-- $Id: iso.xml 270 2021-07-11 19:42:06Z sangwine $ -->

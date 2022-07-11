@@ -1,0 +1,67 @@
+<!-- Generated automatically from an XML file of the same name.
+     Copyright: Stephen J. Sangwine and Eckhard Hitzer, 2011-2021.
+--><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>randm :: Functions (Clifford Multivector Toolbox Function Reference)
+</title><link rel="stylesheet" href="clifstyle.css" type="text/css"></head><body><h1>Clifford Function Reference</h1><h2>randm</h2>
+<p>Make random clifford multivector.</p>
+<h2>Description</h2>
+<p>
+<tt>randm</tt> creates random multivectors of unit norm in the current
+algebra.
+</p>
+    It accepts parameters similar to the MATLAB&reg; functions <tt>rand</tt>
+    and <tt>randn</tt> to specify the dimensions of the multivector array
+    (default 1-by-1).
+    <p>
+        <p>
+            In addition, it accepts an optional final pair of parameters in
+            the form <tt>'sparse', k</tt> where k is a numeric value between
+            1/m and 1, where m is the number of elements in a multivector of
+            the current algebra. In this case, the result is a multivector
+            with some empty elements (in fact (1 - k) * m empty elements).
+        </p>
+    </p>
+
+<h2>Examples</h2>
+<pre>
+&gt;&gt; randm(2)
+ 
+ans =
+ 
+     2x2 Cl(0,2) multivector matrix
+ 
+&gt;&gt; show(ans)
+ 
+ans =
+ 
+e0 *
+ 
+   -0.6475    0.0383
+    0.7220   -0.3985
+
++ e1 *
+ 
+    0.5411    0.8745
+   -0.4002   -0.1258
+
++ e2 *
+ 
+   -0.3898   -0.3179
+    0.5512    0.0039
+
++ e12 *
+ 
+    0.3687   -0.3643
+    0.1212   -0.9085
+
+&gt;&gt; randm('sparse', 0.5)
+ 
+ans =
+ 
+   0.9444 e0
+ + 0.3288 e12
+</pre>
+
+
+<h4>(c) 2011-2021 Stephen J. Sangwine and Eckhard Hitzer.</h4><p><a href="license.html">License terms.</a></p></body></html>

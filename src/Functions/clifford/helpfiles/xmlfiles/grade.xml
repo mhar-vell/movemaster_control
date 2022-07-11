@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "grade" overload = "false">
+<short>Extracts the y-th grade component of a clifford multivector.
+ The result may be empty (example: grade(e1, 2) = []).</short>
+<long>
+<para>
+    <code>[g, e] = grade(x,y)</code> returns in <code>g</code>
+    the elements of multivector <code>x</code>,
+    which are part of the grade, <code>y</code>.
+    The second return result, if required, shows whether the result in
+    <code>g</code> is empty, as a <code>true</code> or <code>false</code> value.
+</para>
+</long>
+<examples>
+<precode>
+>> x = randm
+ 
+x =  0.3445 e0  
+   + 0.0708 e1   + 0.0480 e2   + 0.3854 e3   - 0.1953 e4  
+   + 0.1691 e12  + 0.2027 e13  - 0.0592 e14  + 0.0524 e23  - 0.2830 e24  - 0.2787 e34 
+   + 0.0255 e123 + 0.1753 e124 + 0.6276 e134 - 0.1619 e234
+   + 0.0455 e1234
+ 
+>> b = bivector(x)
+ 
+b = 0.1691 e12  + 0.2027 e13  - 0.0592 e14  + 0.0524 e23  - 0.2830 e24  - 0.2787 e34 
+ 
+>> [v, e] = grade(x, 1)
+ 
+v = 0.0708 e1   + 0.0480 e2   + 0.3854 e3   - 0.1953 e4  
+ 
+e = logical 0
+
+>> [v, e] = grade(b, 1)
+ 
+v = [] Cl(0,4) multivector
+
+e = logical 1 
+</precode>
+</examples>
+<seealso>
+<cliffun name = "bivector"/>
+<cliffun name = "diag"/>
+<cliffun name = "disp"/>
+<cliffun name = "display"/>
+<cliffun name = "even"/>
+<cliffun name = "odd"/>
+</seealso>
+<!--<references>
+</references>-->
+</function>
+
+<!-- $Id: grade.xml 270 2021-07-11 19:42:06Z sangwine $ -->

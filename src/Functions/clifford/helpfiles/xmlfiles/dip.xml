@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "dip" overload = "false">
+<short>Dorst or (fat) dot inner product</short>
+<long>
+<para>
+This product is based on a formula (2.10) by Leo Dorst (see reference below).
+</para>
+<para>
+The two arguments must be the same size or one must be scalar.
+This is an elementwise operation if applied to arrays.
+</para>
+</long>
+<seealso>
+<cliffun name = "hip"/>
+<cliffun name = "left_contraction"/>
+<cliffun name = "right_contraction"/>
+<cliffun name = "scalar_product"/>
+</seealso>
+<references>
+<reference>
+Leo Dorst, <italic>The inner products of geometric algebra</italic>, ch. 2, pp. 35-46,
+in: L. Dorst, C. Doran, J. Lasenby, <italic>Applications of geometric algebra in
+computer science and engineering</italic>, Birkhauser, Boston, 2002.
+<doi>10.1007/978-1-4612-0089-5</doi>.
+</reference>
+</references>
+</function>
+
+<!-- $Id: dip.xml 270 2021-07-11 19:42:06Z sangwine $ -->

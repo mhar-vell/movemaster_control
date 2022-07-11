@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "dual" overload = "false">
+<short>Computes the dual of a multivector.</short>
+<long>
+<para>
+<code>dual(x)</code> computes the dual of a multivector, <code>x</code>.
+The dual is defined as the product of the inverse of the pseudoscalar (on
+the left) with the multivector <code>x</code>, as shown in the example
+below.
+</para>
+</long>
+<examples>
+<precode>
+>> clifford_signature(3,0)
+>> m = randm
+ 
+m =
+ 
+ - 0.1792 e0 
+ + 0.1462 e1  + 0.2207 e2  + 0.5109 e3 
+ - 0.0579 e12 - 0.6382 e13 - 0.2506 e23
+ + 0.4043 e123
+ 
+>> dual(m), inv(e123) .* m
+ 
+ans =
+ 
+   0.4043 e0 
+ - 0.2506 e1  + 0.6382 e2  - 0.0579 e3 
+ - 0.5109 e12 + 0.2207 e13 - 0.1462 e23
+ + 0.1792 e123
+ 
+ 
+ans =
+ 
+   0.4043 e0 
+ - 0.2506 e1  + 0.6382 e2  - 0.0579 e3 
+ - 0.5109 e12 + 0.2207 e13 - 0.1462 e23
+ + 0.1792 e123
+ 
+>> inv(e123)
+ 
+ans = - 1.0000 e123
+</precode>
+</examples>
+<seealso>
+<cliffun name = "conj"/>
+<cliffun name = "reverse"/>
+<cliffun name = "grade_involution"/>
+<cliffun name = "clifford_conjugate"/>
+<cliffun name = "grade_four_involution"/>
+</seealso>
+<!--<references>
+</references>-->
+</function>
+
+<!-- $Id: dual.xml 295 2021-08-09 16:51:26Z sangwine $ -->

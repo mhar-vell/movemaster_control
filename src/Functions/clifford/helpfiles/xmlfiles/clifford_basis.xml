@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "clifford_basis" overload = "false">
+<short>Vector of Clifford basis elements.</short>
+<long>
+<para>
+<code>clifford_basis</code> returns a column vector containing all the
+    basis elements of the current algebra, starting with the scalar
+    and ending with the pseudoscalar.
+</para>
+</long>
+<examples>
+<precode>
+>> clifford_signature(0,2)
+>> show(clifford_basis)
+ 
+e0 *
+ 
+     1
+     0
+     0
+     0
+
++ e1 *
+ 
+     0
+     1
+     0
+     0
+
++ e2 *
+ 
+     0
+     0
+     1
+     0
+
++ e12 *
+ 
+     0
+     0
+     0
+     1
+ </precode>
+</examples>
+</function>
+
+<!-- $Id: clifford_basis.xml 270 2021-07-11 19:42:06Z sangwine $ -->

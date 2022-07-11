@@ -1,0 +1,42 @@
+<!-- Generated automatically from an XML file of the same name.
+     Copyright: Stephen J. Sangwine and Eckhard Hitzer, 2011-2021.
+--><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>antisymmetric :: Functions (Clifford Multivector Toolbox Function Reference)
+</title><link rel="stylesheet" href="clifstyle.css" type="text/css"></head><body><h1>Clifford Function Reference</h1><h2>antisymmetric</h2>
+<p>Extracts those grades of a multivector which change sign under reversion.</p>
+<h2>Description</h2>
+<p>
+    <tt>p = antisymmetric(m)</tt> returns in <tt>p</tt>
+    those grades of multivector <tt>m</tt>
+    which change sign under reversion.
+</p>
+
+<h2>Examples</h2>
+<pre>
+&gt;&gt; clifford_signature(3,1)
+&gt;&gt; m = randm
+ 
+m =  - 0.0310 e0  
+     + 0.3718 e1   + 0.3517 e2   + 0.3537 e3   + 0.1676 e4  
+     - 0.3014 e12  + 0.1790 e13  + 0.4069 e14  + 0.1220 e23  + 0.2583 e24  + 0.1814 e34 
+     - 0.0757 e123 + 0.0734 e124 - 0.1965 e134 + 0.2217 e234
+     - 0.2863 e1234
+ 
+&gt;&gt; antisymmetric(m)
+ 
+ans =  - 0.3014 e12  + 0.1790 e13  + 0.4069 e14  + 0.1220 e23  + 0.2583 e24  + 0.1814 e34 
+       - 0.0757 e123 + 0.0734 e124 - 0.1965 e134 + 0.2217 e234
+ 
+&gt;&gt; reverse(m)
+ 
+ans =  - 0.0310 e0  
+       + 0.3718 e1   + 0.3517 e2   + 0.3537 e3   + 0.1676 e4  
+       + 0.3014 e12  - 0.1790 e13  - 0.4069 e14  - 0.1220 e23  - 0.2583 e24  - 0.1814 e34 
+       + 0.0757 e123 - 0.0734 e124 + 0.1965 e134 - 0.2217 e234
+       - 0.2863 e1234
+</pre>
+
+<h2>See Also</h2>Clifford functions: <a href="symmetric.html">symmetric</a>, <a href="reverse.html">reverse</a><br>
+
+<h4>(c) 2011-2021 Stephen J. Sangwine and Eckhard Hitzer.</h4><p><a href="license.html">License terms.</a></p></body></html>

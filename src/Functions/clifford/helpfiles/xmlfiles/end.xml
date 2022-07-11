@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "end" overload = "true">
+<short>End indexing for multivector arrays</short>
+<syntax>e = end(a, k, n)</syntax>
+<long>
+<para>
+<code>end</code> overloads a fundamental &matlab; operation for Clifford
+multivector arrays in order to make possible indexing such as
+<code>A(2:end, 2:end)</code>.
+It is not normally called directly as a function.
+</para>
+</long>
+<seealso>
+<matlabfun name = "end"/>
+</seealso>
+</function>
+
+<!--$Id: end.xml 139 2017-06-30 18:10:39Z sangwine $-->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "coefficients" overload = "false">
+<short>Returns the coefficients of the multivector in a cell array.</short>
+<long>
+<para>
+    <code>c = coefficients(m)</code> returns in <code>c</code> the numeric
+    coefficients of the multivector <code>m</code> as a cell array. Some of
+    the cells may be empty, corresponding to coefficients with zero values.
+</para>
+</long>
+<examples>
+<precode>
+>> m = randn(2) .* e2
+ 
+m = 2x2 Cl(0,2) multivector matrix
+ 
+>> c = coefficients(m)
+
+c = 1×4 cell array
+
+    {0×0 double}    {0×0 double}    {2×2 double}    {0×0 double}
+
+>> c{3}
+
+ans = 1.0347   -0.3034
+      0.7269    0.2939
+</precode>
+</examples>
+<seealso>
+<cliffun name = "part"/>
+</seealso>
+<!--<references>
+</references>-->
+</function>
+
+<!-- $Id: coefficients.xml 270 2021-07-11 19:42:06Z sangwine $ -->

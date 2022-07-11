@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE function SYSTEM "cliffunction.dtd">
+<function name = "clifford_signature" overload = "false">
+<short>Initialises the Clifford Algebra.</short>
+<long>
+<para>
+<code>clifford_signature(p,q,r)</code> initalises the signature of the
+Clifford Algebra being used. It must be called to initialise an algebra
+before any other multivector function can be called successfully. It
+accepts from zero to 3 parameters which must be non-negative integers. Any
+that are omitted default to zero. The three parameters represent the number
+of basis vectors in the algebra that square to +1, -1, and 0 respectively.
+</para>
+    <para>
+        If called without parameters this function outputs a summary of the
+        current alegbra if one has been initialised.
+    </para>
+    <para>
+        The function can also be called with one output parameter and zero
+        input parameters. In this case it returns a 3-element row vector
+        containing the signature of the current algebra (in the same order
+        as the input parameters described above).
+    </para>
+</long>
+<examples>
+<precode>
+>> clifford_signature
+Error using clifford_signature (line 72)
+No Clifford algebra has been initialised.
+ 
+>> clifford_signature(0,2)
+>> clifford_signature
+Algebra Cl(0,2)
+Dimensionality:   4
+Number of grades: 3
+Multiplication table:
+     | e0   e1   e2   e12
+-----+-------------------
+e0   | e0   e1   e2   e12
+e1   | e1  -e0   e12 -e2 
+e2   | e2  -e12 -e0   e1 
+e12  | e12  e2  -e1  -e0 
+>> S = clifford_signature
+
+S =
+
+  1×3 uint16 row vector
+
+   0   2   0
+</precode>
+</examples>
+<!--<seealso>
+</seealso>
+<references>
+</references>-->
+</function>
+
+<!-- $Id: clifford_signature.xml 298 2021-08-09 20:07:10Z sangwine $ -->

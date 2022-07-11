@@ -1,0 +1,56 @@
+<!-- Generated automatically from an XML file of the same name.
+     Copyright: Stephen J. Sangwine and Eckhard Hitzer, 2011-2021.
+--><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>clifford_signature :: Functions (Clifford Multivector Toolbox Function Reference)
+</title><link rel="stylesheet" href="clifstyle.css" type="text/css"></head><body><h1>Clifford Function Reference</h1><h2>clifford_signature</h2>
+<p>Initialises the Clifford Algebra.</p>
+<h2>Description</h2>
+<p>
+<tt>clifford_signature(p,q,r)</tt> initalises the signature of the
+Clifford Algebra being used. It must be called to initialise an algebra
+before any other multivector function can be called successfully. It
+accepts from zero to 3 parameters which must be non-negative integers. Any
+that are omitted default to zero. The three parameters represent the number
+of basis vectors in the algebra that square to +1, -1, and 0 respectively.
+</p>
+    <p>
+        If called without parameters this function outputs a summary of the
+        current alegbra if one has been initialised.
+    </p>
+    <p>
+        The function can also be called with one output parameter and zero
+        input parameters. In this case it returns a 3-element row vector
+        containing the signature of the current algebra (in the same order
+        as the input parameters described above).
+    </p>
+
+<h2>Examples</h2>
+<pre>
+&gt;&gt; clifford_signature
+Error using clifford_signature (line 72)
+No Clifford algebra has been initialised.
+ 
+&gt;&gt; clifford_signature(0,2)
+&gt;&gt; clifford_signature
+Algebra Cl(0,2)
+Dimensionality:   4
+Number of grades: 3
+Multiplication table:
+     | e0   e1   e2   e12
+-----+-------------------
+e0   | e0   e1   e2   e12
+e1   | e1  -e0   e12 -e2 
+e2   | e2  -e12 -e0   e1 
+e12  | e12  e2  -e1  -e0 
+&gt;&gt; S = clifford_signature
+
+S =
+
+  1&times;3 uint16 row vector
+
+   0   2   0
+</pre>
+
+
+<h4>(c) 2011-2021 Stephen J. Sangwine and Eckhard Hitzer.</h4><p><a href="license.html">License terms.</a></p></body></html>

@@ -1,0 +1,41 @@
+<!-- Generated automatically from an XML file of the same name.
+     Copyright: Stephen J. Sangwine and Eckhard Hitzer, 2011-2021.
+--><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>e0, e1 etc :: Functions (Clifford Multivector Toolbox Function Reference)
+</title><link rel="stylesheet" href="clifstyle.css" type="text/css"></head><body><h1>Clifford Function Reference</h1><h2>e0, e1 etc</h2>
+<p>Clifford basis blades<br>(Clifford overloading of standard MATLAB&reg; function)
+</p>
+<h2>Description</h2>
+<p>
+These functions represent the clifford basis blades
+<tt>e0</tt>, <tt>e1</tt>, <tt>e12</tt>, ..., <tt>e123</tt>.
+They are implemented as parameterless functions. A limited set of these are
+distributed with the toolbox. More can be created by the user if needed -
+see the file <tt>clifford_parameterless_functions</tt> which is a
+script that can be adapted by editing the file <tt>parameterless.lst</tt>.
+</p>
+    <p>
+        Only the lexically ordered permutations of these blades are provided
+        as functions, but others can be created by calling the Clifford
+        constructor with a string parameter, e.g. <tt>clifford('e312')</tt>.
+        Equally, this method can be used to create basis blades for which a
+        parameterless function file does not exist.
+    </p>
+
+<h2>Examples</h2>
+<pre>
+&gt;&gt; clifford_signature(3,3)
+&gt;&gt; e1234
+ 
+ans = 1.0000 e1234 
+
+&gt;&gt; clifford('e21') + clifford('e431')
+
+ans = - 1.0000 e12   
+      - 1.0000 e134  
+</pre>
+
+<h2>See Also</h2>Clifford functions: <a href="clifford_signature.html">clifford_signature</a>, <a href="clifford.html">clifford</a><br>
+
+<h4>(c) 2011-2021 Stephen J. Sangwine and Eckhard Hitzer.</h4><p><a href="license.html">License terms.</a></p></body></html>
