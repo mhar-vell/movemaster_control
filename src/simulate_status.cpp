@@ -55,6 +55,7 @@ int main(int argc, char** argv) {
         pub_msg_1.joint         =   "Joint 1";
         pub_msg_1.setpoint      =   setpoint_1;
         pub_msg_1.pulse_count   =   setpoint_1/185;
+        pub_msg_1.IsDone = true;
         //pub_msg_1.pulse_count   =   encoder_count_1/185;
         //pub_msg_1.error         =   error_1;
         //pub_msg_1.output        =   output_1;
@@ -62,15 +63,19 @@ int main(int argc, char** argv) {
         pub_msg_2.joint         =   "Joint 2";
         pub_msg_2.setpoint      =   setpoint_2;
         pub_msg_2.pulse_count   =   setpoint_2/228;
+        pub_msg_2.IsDone = true;
         pub_msg_3.joint         =   "Joint 3";
         pub_msg_3.setpoint      =   setpoint_3;
         pub_msg_3.pulse_count   =   setpoint_3/186;
+        pub_msg_3.IsDone = true;
         pub_msg_4.joint         =   "Joint 4";
         pub_msg_4.setpoint      =   setpoint_4;
         pub_msg_4.pulse_count   =   setpoint_4/154.56;
+        pub_msg_4.IsDone = true;
         pub_msg_5.joint         =   "Joint 5";
         pub_msg_5.setpoint      =   setpoint_5;
         pub_msg_5.pulse_count   =   setpoint_5/116;
+        pub_msg_5.IsDone = true;
 
         pub_1.publish(pub_msg_1);
         pub_2.publish(pub_msg_2);
