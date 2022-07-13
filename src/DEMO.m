@@ -41,10 +41,6 @@ fprintf('Manipulator reseted.\n');
 
 %% IK
 
-% teste
-msg.GoHome = 0;
-send(pub,msg);
-
 % Home configuration.
 home = [deg2rad(   0);
         deg2rad( 106);
@@ -53,8 +49,10 @@ home = [deg2rad(   0);
         deg2rad(   0)];
 
 % Defines the destination pose.
-goal_pos = [450;-250;100];
-%goal_pos = [100;100;100];
+goal_pos = [465;-133;200]; % pino 1
+goal_pos = [465;-43;178]; % pino 2
+goal_pos = [465;47;152]; % pino 3
+%goal_pos = [465;137;165]; % pino 4
 ori_angle = deg2rad(90); % Calculations in radians, to the Movemaster in degrees.
 
 % Computes the inverse kinematics.
@@ -70,6 +68,7 @@ end
 if goal_pos(3) < 10
     valid= false;
 end
+valid
 
 %% Plot
 

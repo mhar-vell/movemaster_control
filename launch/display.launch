@@ -5,4 +5,6 @@
         <node name="state_publisher" pkg="movemaster_control" type="state_publisher" output="screen"/>
         <node type="rviz" name="rviz" pkg="rviz" args="-d $(find movemaster_control)/rviz/display.rviz" />
 
+        <node name="simulate_status" pkg="movemaster_control" type="simulate_status" output="screen"/>
+
 </launch>
