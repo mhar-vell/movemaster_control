@@ -1,9 +1,9 @@
-- tentar fazer gazebo
 - ver no outro arquivo matlab (nao demo) se ja tem algo com as trajetorias, se nao tiver fazer um programa simples no matlab mesmo pra criar n pontos entre dois pontos
 - fazer um arquivo no matlab para seguir diversos pontos seguidamente
 - como comparar duas trajetórias (deslocamento?)
 
 
+- tentar fazer gazebo
 - ver se eh possível fazer o deslocamento de peças no rviz pela junta prismatica - horizontal e vertical
 - talvez criar o estado hanoi, um tópico que vai ter informação da situacao atual da torre e das peças para outro nó ler e desenhar no rviz
 - algoritmos de resolucao torre de hanoi
