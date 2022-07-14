@@ -257,6 +257,7 @@
 
 <joint name="Jp1" type="fixed">
   <origin xyz="0.0165 0.0025 0.01" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
   <parent link="hanoi_base"/>
   <child link="hanoi_p1"/>
 </joint>

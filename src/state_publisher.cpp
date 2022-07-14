@@ -75,7 +75,6 @@ int main(int argc, char** argv) {
 
     geometry_msgs::TransformStamped odom_trans;
     sensor_msgs::JointState joint_state;
-    sensor_msgs::JointState joint_state2;	
 
     odom_trans.header.frame_id = "odom";
     odom_trans.child_frame_id = "Base";
