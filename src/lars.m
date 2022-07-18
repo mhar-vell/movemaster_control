@@ -9,20 +9,42 @@ pino2 = -43;
 pino3 = 47;
 pino4 = 137;
 
-vetor_posicoes = [pino1 fora;
-                  pino1 alto;  %pick1
+vetor_posicoes = [pino3 fora;
+                  pino3 alto;  %pick1
+                  pino3 fora;
+                  pino4 fora;
+                  pino4 baixo; %place1
+                  pino4 fora;
+                  pino1 fora;
+                  pino1 alto; %pick2
+                  pino1 fora;
+                  pino3 fora;
+                  pino3 alto; %place2
+                  pino3 fora;
+                  pino1 fora;
+                  pino1 medio; %pick3
                   pino1 fora;
                   pino2 fora;
-                  pino2 baixo; %place1
+                  pino2 baixo; %place3
                   pino2 fora;
                   pino3 fora;
-                  pino3 alto; %pick2
+                  pino3 alto; %pick4
+                  pino3 fora;
+                  pino2 fora;
+                  pino2 medio; %place4
+                  pino2 fora;
+                  pino3 fora;
+                  pino3 medio; %pick5
                   pino3 fora;
                   pino1 fora;
-                  pino1 alto; %place2
+                  pino1 medio; %place5
                   pino1 fora;
-                  pino3 fora;
-                  pino3 medio; %pick3
+                  pino4 fora;
+                  pino4 baixo; %pick6
+                  pino4 fora;
+                  pino1 fora;
+                  pino1 alto; %place6
+                  pino1 fora; 
                   pino3 fora;]
                   
 
