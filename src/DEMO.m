@@ -39,6 +39,7 @@ end
 fprintf('Manipulator reseted.\n');
 
 
+
 %% IK
 
 % Home configuration.
