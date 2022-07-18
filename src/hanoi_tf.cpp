@@ -42,7 +42,7 @@ void Callback(const std_msgs::Int32MultiArray::ConstPtr &msg)
     altura_v5 = define_altura(msg->data[4]);
     pino_v6 = define_pino(msg->data[5]);
     altura_v6 = define_altura(msg->data[5]);
-    
+
 }
 
 int main(int argc, char **argv)
@@ -81,7 +81,7 @@ int main(int argc, char **argv)
         transform_v3.setOrigin(tf::Vector3(pino_v3, 0.0, altura_v3));
         transform_v4.setOrigin(tf::Vector3(pino_v4, 0.0, altura_v4));
         transform_v5.setOrigin(tf::Vector3(pino_v5, 0.0, altura_v5));
-        transform_v6.setOrigin(tf::Vector3(pino_v4, 0.0, altura_v6));
+        transform_v6.setOrigin(tf::Vector3(pino_v6, 0.0, altura_v6));
         br_v1.sendTransform(tf::StampedTransform(transform_v1, ros::Time::now(), "hanoi_base", "hanoi_p1"));
         br_v2.sendTransform(tf::StampedTransform(transform_v2, ros::Time::now(), "hanoi_base", "hanoi_p2"));
         br_v3.sendTransform(tf::StampedTransform(transform_v3, ros::Time::now(), "hanoi_base", "hanoi_p3"));
