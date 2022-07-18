@@ -209,7 +209,7 @@
 
 <link name="hanoi_base">
   <visual>
-    <origin xyz="0 0 0" rpy="0 0 0" />
+    <origin xyz="-0.058 -0.044 -0.01" rpy="0 0 0" />
     <geometry>
       <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/base.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -220,7 +220,7 @@
 </link>
 
 <joint name="Jbase" type="fixed">
-  <origin xyz="-0.11 0.11 0.01" rpy="0 0 0" />
+  <origin xyz="-0.052 0.154 0.02" rpy="0 0 0" />
   <parent link="mesa"/>
   <child link="hanoi_base"/>
 </joint>
@@ -243,6 +243,13 @@
   <child link="mesa"/>
 </joint>
 
+<joint name="Jp1" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base"/>
+  <child link="hanoi_p1"/>
+</joint>
+
 <link name="hanoi_p1">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -259,13 +266,6 @@
   </visual>
 </link>
 
-<joint name="Jp1" type="fixed">
-  <origin xyz="0.058 0.044 0.01" rpy="0 0 0" />
-  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
-  <parent link="hanoi_base"/>
-  <child link="hanoi_p1"/>
-</joint>
-
 <link name="hanoi_p2">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -278,9 +278,10 @@
   </visual>
 </link>
 
-<joint name="Jp2" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p1"/>
+<joint name="Jp2" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base"/>
   <child link="hanoi_p2"/>
 </joint>
 
@@ -296,9 +297,10 @@
   </visual>
 </link>
 
-<joint name="Jp3" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p2"/>
+<joint name="Jp3" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base"/>
   <child link="hanoi_p3"/>
 </joint>
 
@@ -314,8 +316,9 @@
   </visual>
 </link>
 
-<joint name="Jp4" type="fixed">
-  <origin xyz="0.234 0.044 0.01" rpy="0 0 0" />
+<joint name="Jp4" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
   <parent link="hanoi_base"/>
   <child link="hanoi_p4"/>
 </joint>
@@ -332,9 +335,10 @@
   </visual>
 </link>
 
-<joint name="Jp5" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p4"/>
+<joint name="Jp5" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base"/>
   <child link="hanoi_p5"/>
 </joint>
 
@@ -350,9 +354,10 @@
   </visual>
 </link>
 
-<joint name="Jp6" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p5"/>
+<joint name="Jp6" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base"/>
   <child link="hanoi_p6"/>
 </joint>
 

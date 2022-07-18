@@ -7,4 +7,6 @@
 
         <node name="simulate_status" pkg="movemaster_control" type="simulate_status" output="screen"/>
 
+        <node name="hanoi_tf" pkg="movemaster_control" type="hanoi_tf" output="screen"/>
+
 </launch>

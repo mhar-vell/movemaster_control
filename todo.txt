@@ -1,11 +1,10 @@
-- tf pra mover os blocos no rviz
+- talvez criar o estado hanoi, um tópico que vai ter informação da situacao atual da torre e das peças para outro nó ler e desenhar no rviz
+- algoritmos de resolucao torre de hanoi
 - ver no outro arquivo matlab (nao demo) se ja tem algo com as trajetorias, se nao tiver fazer um programa simples no matlab mesmo pra criar n pontos entre dois pontos
 - como comparar duas trajetórias (deslocamento?)
 
 
 - tentar fazer gazebo
-- talvez criar o estado hanoi, um tópico que vai ter informação da situacao atual da torre e das peças para outro nó ler e desenhar no rviz
-- algoritmos de resolucao torre de hanoi
 	- a torre comum com 3 pinos e qualquer numero de discos já tem uma solução ótima conhecida. com 4 pinos também há diversas soluções e nos ultimos anos foram provadas como ótimas. uma boa ideia para o artigo talvez seja iniciar no meio de uma posição qualquer (mas válida). isso parece que dificulta as soluções e permite varias solucoes em paralelo. 
 - motivacao: na literatura sempre há apenas um modelo virtual acoplado a um robo, nós estamos propondo q haja varios modelos virtuais competindo para realizar uma tarefa da melhor maneira de acordo com alguns indicadores (esforço, tempo?) e o modelo vencedor será acoplado como digital twin para o robo real seguir a trajetoria efetuada
 - graficos: grafico do esforço ou deslocamento das juntas? ou algo parecido para demonstrar ao longo do tempo os modelos realizando a tarefa com algoritmos diferentes (talvez sobreposto, e depois colocar o robo real junto com o vencedor)
