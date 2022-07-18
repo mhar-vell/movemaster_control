@@ -1,6 +1,6 @@
 % IK
 
-cima = 200;
+fora = 200;
 alto = 178;
 medio = 165;
 baixo = 152;
@@ -9,10 +9,23 @@ pino2 = -43;
 pino3 = 47;
 pino4 = 137;
 
-vetor_posicoes = [pino1 cima;
-                  pino2 baixo;
-                  pino3 cima;
-                  pino4 baixo];
+vetor_posicoes = [pino1 fora;
+                  pino1 alto;  %pick1
+                  pino1 fora;
+                  pino2 fora;
+                  pino2 baixo; %place1
+                  pino2 fora;
+                  pino3 fora;
+                  pino3 alto; %pick2
+                  pino3 fora;
+                  pino1 fora;
+                  pino1 alto; %place2
+                  pino1 fora;
+                  pino3 fora;
+                  pino3 medio; %pick3
+                  pino3 fora;]
+                  
+
 
 for i = 1:length(vetor_posicoes)
 
@@ -57,4 +70,5 @@ for i = 1:length(vetor_posicoes)
     
         send(pub,msg);
     end
+    pause(0.8);
 end

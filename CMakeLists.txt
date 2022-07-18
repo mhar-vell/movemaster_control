@@ -34,3 +34,7 @@ add_dependencies(marker_publisherNOVO ${catkin_EXPORTED_TARGETS})
 add_executable(simulate_status src/simulate_status.cpp)
 target_link_libraries(simulate_status ${catkin_LIBRARIES})
 add_dependencies(simulate_status ${catkin_EXPORTED_TARGETS})
+
+add_executable(hanoi_tf src/hanoi_tf.cpp)
+target_link_libraries(hanoi_tf ${catkin_LIBRARIES})
+add_dependencies(hanoi_tf ${catkin_EXPORTED_TARGETS})
