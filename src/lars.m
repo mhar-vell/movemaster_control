@@ -52,6 +52,36 @@ vetor_desenho = [vetor_desenho;vetor_desenho_novo];
 [vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(1,1,7,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,12,1,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,11,8,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,1,9,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(4,10,1,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,9,10,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,8,2,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,5,3,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(2,4,8,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,3,9,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,10,3,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
 
 
 for i = 1:length(vetor_posicoes)
@@ -63,8 +93,8 @@ for i = 1:length(vetor_posicoes)
             deg2rad(   0);
             deg2rad(   0)];
     
-    altura = baixo;
-    pino = pino4;
+    %altura = baixo;
+    %pino = pino4;
     
     % Defines the destination pose.
     goal_pos = [465;vetor_posicoes(i,1);vetor_posicoes(i,2)];
