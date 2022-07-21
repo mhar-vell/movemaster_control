@@ -241,6 +241,96 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        hanoi_p1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p22:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p23:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p32:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p33:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p42:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p43:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p52:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p53:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p62:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hanoi_p63:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         mesa:
           Alpha: 1
           Show Axes: false
@@ -340,25 +430,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.183743715286255
+      Distance: 2.0017313957214355
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.13529615104198456
-        Y: -0.4774056673049927
-        Z: 0.36616334319114685
+        X: 0.08557316660881042
+        Y: -0.6429421305656433
+        Z: 0.18005919456481934
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3747975826263428
+      Pitch: 0.3047976791858673
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.22670578956604
+      Yaw: 0.6667059659957886
     Saved: ~
 Window Geometry:
   Displays:

@@ -574,6 +574,24 @@
   </visual>
 </link>
 
+<link name="hanoi_base2">
+  <visual>
+    <origin xyz="-0.058 -0.044 -0.01" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/base.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Color_hbase">
+      <color rgba="0.643 0.454 0.286 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jbase2" type="fixed">
+  <origin xyz="-0.052 0.154 0.02" rpy="0 0 0" />
+  <parent link="mesa2"/>
+  <child link="hanoi_base2"/>
+</joint>
+
 <link name="mesa2">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -592,57 +610,45 @@
   <child link="mesa2"/>
 </joint>
 
-<link name="hanoi_base2">
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/base.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="Color_hbase">
-      <color rgba="0.643 0.454 0.286 1"/>
-    </material>
-  </visual>
-</link>
-
-<joint name="Jbase2" type="fixed">
-  <origin xyz="-0.11 0.11 0.01" rpy="0 0 0" />
-  <parent link="mesa2"/>
-  <child link="hanoi_base2"/>
+<joint name="Jp12" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base2"/>
+  <child link="hanoi_p12"/>
 </joint>
 
 <link name="hanoi_p12">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_amarela_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_amarela">
-      <color rgba="1 0.788 0.121 1"/>
+    <!--material name="Peca_amarela">
+      <color rgba="1 0.788 0.121 1"/-->
+    <!--material name="Peca_azul">
+      <color rgba="0 0.352 0.580 1"/-->
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
     </material>
   </visual>
 </link>
-
-<joint name="Jp12" type="fixed">
-  <origin xyz="0.0165 0.0025 0.01" rpy="0 0 0" />
-  <parent link="hanoi_base2"/>
-  <child link="hanoi_p12"/>
-</joint>
 
 <link name="hanoi_p22">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_amarela_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_amarela">
-      <color rgba="1 0.788 0.121 1"/>
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp22" type="fixed">
-  <origin xyz="0.006 0.006 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p12"/>
+<joint name="Jp22" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base2"/>
   <child link="hanoi_p22"/>
 </joint>
 
@@ -650,17 +656,18 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_amarela_3.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_amarela">
-      <color rgba="1 0.788 0.121 1"/>
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp32" type="fixed">
-  <origin xyz="0.0075 0.0075 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p22"/>
+<joint name="Jp32" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base2"/>
   <child link="hanoi_p32"/>
 </joint>
 
@@ -668,16 +675,17 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_azul_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_azul">
-      <color rgba="0 0.352 0.580 1"/>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp42" type="fixed">
-  <origin xyz="0.234 0.044 0.01" rpy="0 0 0" />
+<joint name="Jp42" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
   <parent link="hanoi_base2"/>
   <child link="hanoi_p42"/>
 </joint>
@@ -686,17 +694,18 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_azul_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_azul">
-      <color rgba="0 0.352 0.580 1"/>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp52" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p42"/>
+<joint name="Jp52" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base2"/>
   <child link="hanoi_p52"/>
 </joint>
 
@@ -704,17 +713,18 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_azul_3.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_azul">
-      <color rgba="0 0.352 0.580 1"/>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp62" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p52"/>
+<joint name="Jp62" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base2"/>
   <child link="hanoi_p62"/>
 </joint>
 
@@ -931,6 +941,24 @@
   </visual>
 </link>
 
+<link name="hanoi_base3">
+  <visual>
+    <origin xyz="-0.058 -0.044 -0.01" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/base.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Color_hbase">
+      <color rgba="0.643 0.454 0.286 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jbase3" type="fixed">
+  <origin xyz="-0.052 0.154 0.02" rpy="0 0 0" />
+  <parent link="mesa3"/>
+  <child link="hanoi_base3"/>
+</joint>
+
 <link name="mesa3">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -949,57 +977,45 @@
   <child link="mesa3"/>
 </joint>
 
-<link name="hanoi_base3">
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/base.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="Color_hbase">
-      <color rgba="0.643 0.454 0.286 1"/>
-    </material>
-  </visual>
-</link>
-
-<joint name="Jbase3" type="fixed">
-  <origin xyz="-0.11 0.11 0.01" rpy="0 0 0" />
-  <parent link="mesa3"/>
-  <child link="hanoi_base3"/>
+<joint name="Jp13" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base3"/>
+  <child link="hanoi_p13"/>
 </joint>
 
 <link name="hanoi_p13">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_amarela_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_amarela">
-      <color rgba="1 0.788 0.121 1"/>
+    <!--material name="Peca_amarela">
+      <color rgba="1 0.788 0.121 1"/-->
+    <!--material name="Peca_azul">
+      <color rgba="0 0.352 0.580 1"/-->
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
     </material>
   </visual>
 </link>
-
-<joint name="Jp13" type="fixed">
-  <origin xyz="0.0165 0.0025 0.01" rpy="0 0 0" />
-  <parent link="hanoi_base3"/>
-  <child link="hanoi_p13"/>
-</joint>
 
 <link name="hanoi_p23">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_amarela_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_amarela">
-      <color rgba="1 0.788 0.121 1"/>
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp23" type="fixed">
-  <origin xyz="0.006 0.006 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p13"/>
+<joint name="Jp23" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base3"/>
   <child link="hanoi_p23"/>
 </joint>
 
@@ -1007,17 +1023,18 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_amarela_3.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_amarela">
-      <color rgba="1 0.788 0.121 1"/>
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp33" type="fixed">
-  <origin xyz="0.0075 0.0075 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p23"/>
+<joint name="Jp33" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base3"/>
   <child link="hanoi_p33"/>
 </joint>
 
@@ -1025,16 +1042,17 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_azul_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_azul">
-      <color rgba="0 0.352 0.580 1"/>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp43" type="fixed">
-  <origin xyz="0.234 0.044 0.01" rpy="0 0 0" />
+<joint name="Jp43" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
   <parent link="hanoi_base3"/>
   <child link="hanoi_p43"/>
 </joint>
@@ -1043,17 +1061,18 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_azul_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_azul">
-      <color rgba="0 0.352 0.580 1"/>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp53" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p43"/>
+<joint name="Jp53" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base3"/>
   <child link="hanoi_p53"/>
 </joint>
 
@@ -1061,17 +1080,18 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_azul_3.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="Peca_azul">
-      <color rgba="0 0.352 0.580 1"/>
+    <material name="Peca_verde3">
+      <color rgba="0.670 0.858 0.160 1"/>
     </material>
   </visual>
 </link>
 
-<joint name="Jp63" type="fixed">
-  <origin xyz="0 0 0.013" rpy="0 0 0" />
-  <parent link="hanoi_p53"/>
+<joint name="Jp63" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base3"/>
   <child link="hanoi_p63"/>
 </joint>
 
