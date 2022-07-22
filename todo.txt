@@ -1,4 +1,3 @@
-- salvar resolucoes e carregar matlab
 - algoritmos de resolucao torre de hanoi
 
 - tentar fazer gazebo
