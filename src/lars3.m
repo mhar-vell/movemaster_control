@@ -196,7 +196,7 @@ for i = 1:length(vetor_posicoes)
     %[theta3, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos3, ori_angle);
     theta_deg = wrapTo180(rad2deg(theta));
     theta_deg2 = wrapTo180(rad2deg(theta2));
-    %theta_deg2 = wrapTo180(rad2deg(theta2));
+    %theta_deg3 = wrapTo180(rad2deg(theta3));
     
     if goal_pos(1) < 10
         valid= false;
@@ -223,9 +223,17 @@ for i = 1:length(vetor_posicoes)
         msg2.Set3 = theta_deg2(3);
         msg2.Set4 = theta_deg2(4);
         msg2.Set5 = theta_deg2(5) - theta_deg2(4);
+
+        %msg3.GoHome = 0;
+        %msg3.Set1 = theta_deg3(1);
+        %msg3.Set2 = theta_deg3(2);
+        %msg3.Set3 = theta_deg3(3);
+        %msg3.Set4 = theta_deg3(4);
+        %msg3.Set5 = theta_deg3(5) - theta_deg3(4);
     
         %send(pub,msg);
         %send(pub2,msg2);
+        %send(pub3,msg3);
         
         i
         theta_save(i,:) = theta_deg;
