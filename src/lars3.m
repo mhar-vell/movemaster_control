@@ -171,6 +171,77 @@ vetor_desenho2 = [vetor_desenho2;vetor_desenho_novo2];
 vetor_posicoes2 = [vetor_posicoes2;vetor_posicoes_novo2];
 vetor_desenho2 = [vetor_desenho2;vetor_desenho_novo2];
 
+%robo3
+
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(6,9,4,vetor_desenho3)];
+vetor_posicoes3 = vetor_posicoes_novo3;
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(5,8,10,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(6,4,11,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(4,7,4,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(3,3,7,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(2,2,5,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(3,7,6,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(1,1,7,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(3,6,1,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(2,5,8,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(3,1,9,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(4,4,1,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(6,11,4,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(5,10,2,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+[vetor_posicoes_novo3, vetor_desenho_novo3] = [criapontos(6,4,3,vetor_desenho3(end,:))];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3]; %move 15
+
+%completando 21 movimentos
+vetor_posicoes_novo3 = [-133 200;
+                        -133 200;
+                        -133 200;
+                        -133 200;
+                        -133 200;
+                        -133 200];
+vetor_desenho_novo3 = [7 8 9 1 2 3];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
+vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
+
+
+
 %% IK
 
 for i = 1:length(vetor_posicoes)
@@ -185,7 +256,7 @@ for i = 1:length(vetor_posicoes)
     % Defines the destination pose.
     goal_pos = [465;vetor_posicoes(i,1);vetor_posicoes(i,2)];
     goal_pos2 = [465;vetor_posicoes2(i,1);vetor_posicoes2(i,2)];
-    %goal_pos3 = [465;vetor_posicoes3(i,1);vetor_posicoes3(i,2)];
+    goal_pos3 = [465;vetor_posicoes3(i,1);vetor_posicoes3(i,2)];
     ori_angle = deg2rad(90); % Calculations in radians, to the Movemaster in degrees.
     
     % Computes the inverse kinematics.
@@ -193,10 +264,10 @@ for i = 1:length(vetor_posicoes)
     goal_ori = [cos(ori_angle/2); sin(ori_angle/2)*ori_axis];
     [theta, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos, ori_angle);
     [theta2, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos2, ori_angle);
-    %[theta3, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos3, ori_angle);
+    [theta3, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos3, ori_angle);
     theta_deg = wrapTo180(rad2deg(theta));
     theta_deg2 = wrapTo180(rad2deg(theta2));
-    %theta_deg3 = wrapTo180(rad2deg(theta3));
+    theta_deg3 = wrapTo180(rad2deg(theta3));
     
     if goal_pos(1) < 10
         valid= false;
@@ -224,12 +295,12 @@ for i = 1:length(vetor_posicoes)
         msg2.Set4 = theta_deg2(4);
         msg2.Set5 = theta_deg2(5) - theta_deg2(4);
 
-        %msg3.GoHome = 0;
-        %msg3.Set1 = theta_deg3(1);
-        %msg3.Set2 = theta_deg3(2);
-        %msg3.Set3 = theta_deg3(3);
-        %msg3.Set4 = theta_deg3(4);
-        %msg3.Set5 = theta_deg3(5) - theta_deg3(4);
+        msg3.GoHome = 0;
+        msg3.Set1 = theta_deg3(1);
+        msg3.Set2 = theta_deg3(2);
+        msg3.Set3 = theta_deg3(3);
+        msg3.Set4 = theta_deg3(4);
+        msg3.Set5 = theta_deg3(5) - theta_deg3(4);
     
         %send(pub,msg);
         %send(pub2,msg2);
@@ -238,7 +309,7 @@ for i = 1:length(vetor_posicoes)
         i
         theta_save(i,:) = theta_deg;
         theta_save2(i,:) = theta_deg2;
-        %theta_save3(i,:) = theta_deg3;
+        theta_save3(i,:) = theta_deg3;
 
         %msg_hanoi.Data = vetor_desenho(ceil((i+2)/6),:);
         %send(pub_hanoi,msg_hanoi);
@@ -250,4 +321,4 @@ for i = 1:length(vetor_posicoes)
     %pause(0.8);
 end
 
-save('trajetorias.mat','theta_save','theta_save2','vetor_desenho','vetor_desenho2');
+save('trajetorias.mat','theta_save','theta_save2','theta_save3','vetor_desenho','vetor_desenho2','vetor_desenho3');

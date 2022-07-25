@@ -14,10 +14,10 @@ load('trajetorias.mat')
 
 msg_hanoi.Data = vetor_desenho(1,:);
 msg_hanoi2.Data = vetor_desenho2(1,:);
-%msg_hanoi3.Data = vetor_desenho3(1,:);
+msg_hanoi3.Data = vetor_desenho3(1,:);
 send(pub_hanoi,msg_hanoi);
 send(pub_hanoi2,msg_hanoi2);
-%send(pub_hanoi3,msg_hanoi3);
+send(pub_hanoi3,msg_hanoi3);
 
 %% IK
 
@@ -25,7 +25,7 @@ for i = 1:length(theta_save)
 
     theta_deg = theta_save(i,:);
     theta_deg2 = theta_save2(i,:);
-    %theta_deg3 = theta_save3(i,:);
+    theta_deg3 = theta_save3(i,:);
     
     % Movemaster
     
@@ -43,23 +43,23 @@ for i = 1:length(theta_save)
     msg2.Set4 = theta_deg2(4);
     msg2.Set5 = theta_deg2(5) - theta_deg2(4);
 
-    %msg3.GoHome = 0;
-    %msg3.Set1 = theta_deg3(1);
-    %msg3.Set2 = theta_deg3(2);
-    %msg3.Set3 = theta_deg3(3);
-    %msg3.Set4 = theta_deg3(4);
-    %msg3.Set5 = theta_deg3(5) - theta_deg3(4);
+    msg3.GoHome = 0;
+    msg3.Set1 = theta_deg3(1);
+    msg3.Set2 = theta_deg3(2);
+    msg3.Set3 = theta_deg3(3);
+    msg3.Set4 = theta_deg3(4);
+    msg3.Set5 = theta_deg3(5) - theta_deg3(4);
     
     send(pub,msg);
     send(pub2,msg2);
-    %send(pub3,msg3);
+    send(pub3,msg3);
 
     msg_hanoi.Data = vetor_desenho(ceil((i+2)/6),:);
     send(pub_hanoi,msg_hanoi);
     msg_hanoi2.Data = vetor_desenho2(ceil((i+2)/6),:);
     send(pub_hanoi2,msg_hanoi2);
-    %msg_hanoi3.Data = vetor_desenho3(ceil((i+2)/6),:);
-    %send(pub_hanoi3,msg_hanoi3);
+    msg_hanoi3.Data = vetor_desenho3(ceil((i+2)/6),:);
+    send(pub_hanoi3,msg_hanoi3);
     
     pause(0.5);
 
