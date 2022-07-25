@@ -1,12 +1,25 @@
-- algoritmos de resolucao torre de hanoi
+ARTIGO:
+1 intro:
+    - 2 estrofes de introducao, bem o inicio (digital twin e por que existe, quais problemas soluciona, o que ajuda etc)
+2 dt
+    - organizar melhor a parte de definicao
+    - adicionar mais trabalhos correlatos, talvez tabela/síntese dos trabalhos agrupados em categorias
+3 sistema proposto
+    - 1/2 a 1 pag
+    - fazer figura esquema dos varios robos simulados e 1 deles sendo acoplado
+4 robo OK
+5 experimentos
+    - definir outro algoritmo para solucao
+    - realizar parte pratica - filmagem
+6 discussao
+    - indicadores e graficos: deslocamento? esforço das juntas? ou algo parecido para demonstrar ao longo do tempo os modelos realizando a tarefa com algoritmos diferentes (talvez sobreposto, e depois colocar o robo real junto com o vencedor)
 
-- tentar fazer gazebo
+
+
+------------------------------------------------------------
+
+- robos e torre de hanoi - gazebo e coppelia
 - ver no outro arquivo matlab (nao demo) se ja tem algo com as trajetorias, se nao tiver fazer um programa simples no matlab mesmo pra criar n pontos entre dois pontos
-- como comparar duas trajetórias (deslocamento?)
-- motivacao: na literatura sempre há apenas um modelo virtual acoplado a um robo, nós estamos propondo q haja varios modelos virtuais competindo para realizar uma tarefa da melhor maneira de acordo com alguns indicadores (esforço, tempo?) e o modelo vencedor será acoplado como digital twin para o robo real seguir a trajetoria efetuada
-- graficos: grafico do esforço ou deslocamento das juntas? ou algo parecido para demonstrar ao longo do tempo os modelos realizando a tarefa com algoritmos diferentes (talvez sobreposto, e depois colocar o robo real junto com o vencedor)
-- colocar robo e hanoi no coppelia
-
 
 1:
 - rever video das instrucoes;
