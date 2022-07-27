@@ -1,20 +1,17 @@
 ARTIGO:
-1 intro:
-    - 2 estrofes de introducao, bem o inicio (digital twin e por que existe, quais problemas soluciona, o que ajuda etc) - arrumar melhor
+
+- abstract
 2 dt
-    - organizar melhor a parte de definicao
-    - adicionar mais de digital twin com manipuladores, talvez tabela/síntese dos trabalhos agrupados em categorias
+    - organizar melhor a parte de digital twin com manipuladores, talvez tabela/síntese dos trabalhos agrupados em categorias
 3 sistema proposto
     - 1/2 a 1 pag
     - fazer figura esquema dos varios robos simulados e 1 deles sendo acoplado
-4 robo OK
 5 experimentos
     - realizar parte pratica
     - filmagem da parte pratica
 6 discussao
     - indicadores e graficos: deslocamento? esforço das juntas? ou algo parecido para demonstrar ao longo do tempo os modelos realizando a tarefa com algoritmos diferentes (talvez sobreposto, e depois colocar o robo real junto com o vencedor)
-
-- conclusao, abstract
+7 conclusao
 
 
 ------------------------------------------------------------
