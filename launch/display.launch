@@ -9,4 +9,6 @@
 
         <node name="hanoi_tf" pkg="movemaster_control" type="hanoi_tf" output="screen"/>
 
+        <node name="usb_cam_node" pkg="usb_cam" type="usb_cam_node" output="screen"/>
+
 </launch>
