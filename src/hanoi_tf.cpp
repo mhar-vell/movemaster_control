@@ -10,6 +10,8 @@ double pino_v12, pino_v22, pino_v32, pino_v42, pino_v52, pino_v62;
 double altura_v12, altura_v22, altura_v32, altura_v42, altura_v52, altura_v62;
 double pino_v13, pino_v23, pino_v33, pino_v43, pino_v53, pino_v63;
 double altura_v13, altura_v23, altura_v33, altura_v43, altura_v53, altura_v63;
+double pino_v14, pino_v24, pino_v34, pino_v44, pino_v54, pino_v64;
+double altura_v14, altura_v24, altura_v34, altura_v44, altura_v54, altura_v64;
 
 double define_pino(double d)
 {
@@ -83,6 +85,23 @@ void Callback3(const std_msgs::Int32MultiArray::ConstPtr &msg3)
 
 }
 
+void Callback4(const std_msgs::Int32MultiArray::ConstPtr &msg4)
+{
+    pino_v14 = define_pino(msg4->data[0]);
+    altura_v14 = define_altura(msg4->data[0]);
+    pino_v24 = define_pino(msg4->data[1]);
+    altura_v24 = define_altura(msg4->data[1]);
+    pino_v34 = define_pino(msg4->data[2]);
+    altura_v34 = define_altura(msg4->data[2]);
+    pino_v44 = define_pino(msg4->data[3]);
+    altura_v44 = define_altura(msg4->data[3]);
+    pino_v54 = define_pino(msg4->data[4]);
+    altura_v54 = define_altura(msg4->data[4]);
+    pino_v64 = define_pino(msg4->data[5]);
+    altura_v64 = define_altura(msg4->data[5]);
+
+}
+
 int main(int argc, char **argv)
 {
 
@@ -91,6 +110,7 @@ int main(int argc, char **argv)
     ros::Subscriber sub = node.subscribe("/hanoi_status", 1000, Callback);
     ros::Subscriber sub2 = node.subscribe("/hanoi_status2", 1000, Callback2);
     ros::Subscriber sub3 = node.subscribe("/hanoi_status3", 1000, Callback3);
+    ros::Subscriber sub4 = node.subscribe("/hanoi_status4", 1000, Callback4);
 
     static tf::TransformBroadcaster br_v1; // peca vermelha 1 - maior
     static tf::TransformBroadcaster br_v2;
@@ -110,6 +130,12 @@ int main(int argc, char **argv)
     static tf::TransformBroadcaster br_v43; // peca verde 1 - maior
     static tf::TransformBroadcaster br_v53;
     static tf::TransformBroadcaster br_v63;
+    static tf::TransformBroadcaster br_v14; // peca vermelha 1 - maior
+    static tf::TransformBroadcaster br_v24;
+    static tf::TransformBroadcaster br_v34;
+    static tf::TransformBroadcaster br_v44; // peca verde 1 - maior
+    static tf::TransformBroadcaster br_v54;
+    static tf::TransformBroadcaster br_v64;
     tf::Transform transform_v1;
     tf::Transform transform_v2;
     tf::Transform transform_v3;
@@ -128,6 +154,12 @@ int main(int argc, char **argv)
     tf::Transform transform_v43;
     tf::Transform transform_v53;
     tf::Transform transform_v63;
+    tf::Transform transform_v14;
+    tf::Transform transform_v24;
+    tf::Transform transform_v34;
+    tf::Transform transform_v44;
+    tf::Transform transform_v54;
+    tf::Transform transform_v64;
     tf::Quaternion q;
     q.setRPY(0, 0, 0);
     transform_v1.setRotation(q);
@@ -148,6 +180,12 @@ int main(int argc, char **argv)
     transform_v43.setRotation(q);
     transform_v53.setRotation(q);
     transform_v63.setRotation(q);
+    transform_v14.setRotation(q);
+    transform_v24.setRotation(q);
+    transform_v34.setRotation(q);
+    transform_v44.setRotation(q);
+    transform_v54.setRotation(q);
+    transform_v64.setRotation(q);
 
     while (ros::ok())
     {
@@ -170,6 +208,12 @@ int main(int argc, char **argv)
         transform_v43.setOrigin(tf::Vector3(pino_v43, 0.0, altura_v43));
         transform_v53.setOrigin(tf::Vector3(pino_v53, 0.0, altura_v53));
         transform_v63.setOrigin(tf::Vector3(pino_v63, 0.0, altura_v63));
+        transform_v14.setOrigin(tf::Vector3(pino_v14, 0.0, altura_v14));
+        transform_v24.setOrigin(tf::Vector3(pino_v24, 0.0, altura_v24));
+        transform_v34.setOrigin(tf::Vector3(pino_v34, 0.0, altura_v34));
+        transform_v44.setOrigin(tf::Vector3(pino_v44, 0.0, altura_v44));
+        transform_v54.setOrigin(tf::Vector3(pino_v54, 0.0, altura_v54));
+        transform_v64.setOrigin(tf::Vector3(pino_v64, 0.0, altura_v64));
         br_v1.sendTransform(tf::StampedTransform(transform_v1, ros::Time::now(), "hanoi_base", "hanoi_p1"));
         br_v2.sendTransform(tf::StampedTransform(transform_v2, ros::Time::now(), "hanoi_base", "hanoi_p2"));
         br_v3.sendTransform(tf::StampedTransform(transform_v3, ros::Time::now(), "hanoi_base", "hanoi_p3"));
@@ -188,6 +232,12 @@ int main(int argc, char **argv)
         br_v43.sendTransform(tf::StampedTransform(transform_v43, ros::Time::now(), "hanoi_base3", "hanoi_p43"));
         br_v53.sendTransform(tf::StampedTransform(transform_v53, ros::Time::now(), "hanoi_base3", "hanoi_p53"));
         br_v63.sendTransform(tf::StampedTransform(transform_v63, ros::Time::now(), "hanoi_base3", "hanoi_p63"));
+        br_v14.sendTransform(tf::StampedTransform(transform_v14, ros::Time::now(), "hanoi_base4", "hanoi_p14"));
+        br_v24.sendTransform(tf::StampedTransform(transform_v24, ros::Time::now(), "hanoi_base4", "hanoi_p24"));
+        br_v34.sendTransform(tf::StampedTransform(transform_v34, ros::Time::now(), "hanoi_base4", "hanoi_p34"));
+        br_v44.sendTransform(tf::StampedTransform(transform_v44, ros::Time::now(), "hanoi_base4", "hanoi_p44"));
+        br_v54.sendTransform(tf::StampedTransform(transform_v54, ros::Time::now(), "hanoi_base4", "hanoi_p54"));
+        br_v64.sendTransform(tf::StampedTransform(transform_v64, ros::Time::now(), "hanoi_base4", "hanoi_p64"));
 
         ros::Rate loop_rate(30);
 

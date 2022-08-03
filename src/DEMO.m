@@ -51,8 +51,8 @@ home = [deg2rad(   0);
 
 % Defines the destination pose.
 goal_pos = [465;-133;200]; % pino 1
-goal_pos = [465;-43;178]; % pino 2
-goal_pos = [450;-250;100]; % pino 3
+%goal_pos = [465;-43;178]; % pino 2
+%goal_pos = [450;-250;100]; % pino 3
 %goal_pos = [465;137;165]; % pino 4
 ori_angle = deg2rad(90); % Calculations in radians, to the Movemaster in degrees.
 

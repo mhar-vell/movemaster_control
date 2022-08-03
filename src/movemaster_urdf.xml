@@ -1095,4 +1095,371 @@
   <child link="hanoi_p63"/>
 </joint>
 
+<link name="Base4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/Base.stl" scale="1 1 1.7"/>
+    </geometry>
+    <material name="BaseColor">
+      <color rgba="0.50 0.53 0.47 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="JBase4" type="fixed">
+  <origin xyz="0 -0.7 0" rpy="0 0 0"/>
+  <parent link="Base3"/>
+  <child link="Base4"/>
+</joint>
+
+<joint name="J14" type="revolute">
+  <axis xyz="0 0 1"/>
+  <origin xyz="0 0 0.400" rpy="0 0 0"/>
+  <parent link="Base4"/>
+  <child link="L14"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="L14">
+  <visual>
+    <origin xyz="0 0 -0.160" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/L1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="L14Color">
+      <color rgba="0.96 0.95 0.06 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="J24" type="revolute">
+  <axis xyz="0 0 1"/>
+  <origin xyz="0.120 0 0" rpy="1.57 0 0"/>
+  <parent link="L14"/>
+  <child link="L24"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="L24">
+  <visual>
+    <origin xyz="0 0 0" rpy="-1.57 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/L2.stl"/>
+    </geometry>
+    <material name="L2Color">
+      <color rgba="0.86 0.86 0.86 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="J34" type="revolute">
+  <axis xyz="0 0 1"/>
+  <origin xyz="0.250 0 0" rpy="0 0 0"/>
+  <parent link="L24"/>
+  <child link="L34"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="L34">
+  <visual>
+    <origin xyz="0 0 0" rpy="-1.57 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/L3.stl"/>
+    </geometry>
+    <material name="L3Color">
+      <color rgba="0.86 0.86 0.86 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="J44" type="revolute">
+  <axis xyz="0 0 1"/>
+  <origin xyz="0.200 0 0" rpy="0 0 0"/>
+  <parent link="L34"/>
+  <child link="L44"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="L44">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/L4.stl"/>
+    </geometry>
+    <material name="L4Color">
+      <color rgba="0.86 0.86 0.86 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="J54" type="revolute">
+  <axis xyz="0 0 1"/>
+  <origin xyz="0 0 0" rpy="0 -1.57 0"/>
+  <parent link="L44"/>
+  <child link="L54"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="L54">
+  <visual>
+    <origin xyz="0 0 -0.08" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/L5.stl"/>
+    </geometry>
+    <material name="L5Color">
+      <color rgba="0.25 0.25 0.25 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="JCam4" type="fixed">
+  <origin xyz="0 0 -0.080" rpy="0 0 0"/>
+  <parent link="L54"/>
+  <child link="CameraSupport4"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="CameraSupport4">
+  <visual>
+    <origin xyz="0.255 -0.18 0" rpy="0 3.14 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/suporte_movemaster_com_cameras.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="CameraSupportColor4">
+      <color rgba="0.96 0.95 0.06 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="DepthCamera4" type="fixed">
+  <origin xyz="0 0.075 -0.070" rpy="0 2.1 1.57"/>
+  <parent link="CameraSupport4"/>
+  <child link="d400_link4"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="d400_link4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/realsense.stl"/>
+    </geometry>
+    <material name="realsensecolor">
+      <color rgba="0.25 0.25 0.25 0"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="JGripCube4" type="fixed">
+  <origin xyz="0 0 -0.005" rpy="0 0 0"/>
+  <parent link="CameraSupport4"/>
+  <child link="GripCube4"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="GripCube4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/GripCube.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="GripCubeColor">
+      <color rgba="0.25 0.25 0.25 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="JGrip14" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="GripCube4"/>
+  <child link="Grip14"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<joint name="JGrip24" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="GripCube4"/>
+  <child link="Grip24"/>
+  <limit upper="6.28" lower="-6.28" effort="10" velocity="10" />
+</joint>
+
+<link name="Grip14">
+  <visual>
+    <origin xyz="0.03 0 -0.08" rpy="0 1.57 -1.57" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/Grip1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="L14Color">
+      <color rgba="0.96 0.95 0.06 1"/>
+    </material>
+  </visual>
+</link>
+
+<link name="Grip24">
+  <visual>
+    <origin xyz="-0.03 0 -0.08" rpy="0 1.57 -1.57" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/Grip2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="L14Color">
+      <color rgba="0.96 0.95 0.06 1"/>
+    </material>
+  </visual>
+</link>
+
+<link name="hanoi_base4">
+  <visual>
+    <origin xyz="-0.058 -0.044 -0.01" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/base.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Color_hbase">
+      <color rgba="0.643 0.454 0.286 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jbase4" type="fixed">
+  <origin xyz="-0.052 0.154 0.02" rpy="0 0 0" />
+  <parent link="mesa4"/>
+  <child link="hanoi_base4"/>
+</joint>
+
+<link name="mesa4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/table.stl" scale="0.0005 0.0005 0.0005"/>
+    </geometry>
+    <material name="color_mesa">
+      <color rgba="0.933 0.894 0.815 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jmesa4" type="fixed">
+  <origin xyz="0.62 -0.08 0.13" rpy="0 0 1.57" />
+  <parent link="Base4"/>
+  <child link="mesa4"/>
+</joint>
+
+<joint name="Jp14" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base4"/>
+  <child link="hanoi_p14"/>
+</joint>
+
+<link name="hanoi_p14">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <!--material name="Peca_amarela">
+      <color rgba="1 0.788 0.121 1"/-->
+    <!--material name="Peca_azul">
+      <color rgba="0 0.352 0.580 1"/-->
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
+    </material>
+  </visual>
+</link>
+
+<link name="hanoi_p24">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jp24" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base4"/>
+  <child link="hanoi_p24"/>
+</joint>
+
+<link name="hanoi_p34">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_vermelha_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Peca_vermelha">
+      <color rgba="0.901 0.168 0.156 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jp34" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base4"/>
+  <child link="hanoi_p34"/>
+</joint>
+
+<link name="hanoi_p44">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jp44" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base4"/>
+  <child link="hanoi_p44"/>
+</joint>
+
+<link name="hanoi_p54">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Peca_verde">
+      <color rgba="0.670 0.858 0.160 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jp54" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base4"/>
+  <child link="hanoi_p54"/>
+</joint>
+
+<link name="hanoi_p64">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://movemaster_control/3D_Models/stl_hanoi/peca_verde_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Peca_verde4">
+      <color rgba="0.670 0.858 0.160 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Jp64" type="prismatic">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+  <parent link="hanoi_base4"/>
+  <child link="hanoi_p64"/>
+</joint>
+
 </robot>

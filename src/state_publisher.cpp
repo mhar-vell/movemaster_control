@@ -10,6 +10,7 @@
 double J1, J2, J3, J4, J5, J6;
 double J12, J22, J32, J42, J52, J62;
 double J13, J23, J33, J43, J53, J63;
+double J14, J24, J34, J44, J54, J64;
 geometry_msgs::PoseStamped odometry_frame;
 
 void subCallback_1(const movemaster_msg::status::ConstPtr& msg1){J1 = msg1->pulse_count*M_PI/180;}
@@ -32,6 +33,13 @@ void subCallback_33(const movemaster_msg::status::ConstPtr& msg3){J33 = msg3->pu
 void subCallback_43(const movemaster_msg::status::ConstPtr& msg4){J43 = msg4->pulse_count*M_PI/180;}
 void subCallback_53(const movemaster_msg::status::ConstPtr& msg5){J53 = msg5->pulse_count*M_PI/180;}
 void subCallback_63(const movemaster_msg::status::ConstPtr& msg6){J63 = msg6->pulse_count*M_PI/180;}
+
+void subCallback_14(const movemaster_msg::status::ConstPtr& msg1){J14 = msg1->pulse_count*M_PI/180;}
+void subCallback_24(const movemaster_msg::status::ConstPtr& msg2){J24 = msg2->pulse_count*M_PI/180;}
+void subCallback_34(const movemaster_msg::status::ConstPtr& msg3){J34 = msg3->pulse_count*M_PI/180;}
+void subCallback_44(const movemaster_msg::status::ConstPtr& msg4){J44 = msg4->pulse_count*M_PI/180;}
+void subCallback_54(const movemaster_msg::status::ConstPtr& msg5){J54 = msg5->pulse_count*M_PI/180;}
+void subCallback_64(const movemaster_msg::status::ConstPtr& msg6){J64 = msg6->pulse_count*M_PI/180;}
 
 void subCallback_7(const nav_msgs::Odometry::ConstPtr& msg7){
     odometry_frame.pose.position.x = msg7->pose.pose.position.x + 0.375;
@@ -66,6 +74,12 @@ int main(int argc, char** argv) {
     ros::Subscriber sub43 = n.subscribe("status_43", 1000, subCallback_43);
     ros::Subscriber sub53 = n.subscribe("status_53", 1000, subCallback_53);
     ros::Subscriber sub63 = n.subscribe("status_63", 1000, subCallback_63);
+    ros::Subscriber sub14 = n.subscribe("status_14", 1000, subCallback_14);
+    ros::Subscriber sub24 = n.subscribe("status_24", 1000, subCallback_24);
+    ros::Subscriber sub34 = n.subscribe("status_34", 1000, subCallback_34);
+    ros::Subscriber sub44 = n.subscribe("status_44", 1000, subCallback_44);
+    ros::Subscriber sub54 = n.subscribe("status_54", 1000, subCallback_54);
+    ros::Subscriber sub64 = n.subscribe("status_64", 1000, subCallback_64);
     tf::TransformBroadcaster broadcaster;
     ros::Rate loop_rate(30);
 
@@ -81,8 +95,8 @@ int main(int argc, char** argv) {
 
     geometry_msgs::TransformStamped odometry_trans;
 
-    joint_state.name.resize(15);
-    joint_state.position.resize(15);
+    joint_state.name.resize(20);
+    joint_state.position.resize(20);
     joint_state.name[0] ="J1";
     joint_state.name[1] ="J2";
     joint_state.name[2] ="J3";
@@ -98,6 +112,11 @@ int main(int argc, char** argv) {
     joint_state.name[12] ="J33";
     joint_state.name[13] ="J43";
     joint_state.name[14] ="J53";
+    joint_state.name[15] ="J14";
+    joint_state.name[16] ="J24";
+    joint_state.name[17] ="J34";
+    joint_state.name[18] ="J44";
+    joint_state.name[19] ="J54";
 
 
     while (ros::ok()) {
@@ -118,6 +137,11 @@ int main(int argc, char** argv) {
         joint_state.position[12] = J33;
         joint_state.position[13] = J43;
         joint_state.position[14] = J53+J43;
+        joint_state.position[15] = J14;
+        joint_state.position[16] = J24;
+        joint_state.position[17] = J34;
+        joint_state.position[18] = J44;
+        joint_state.position[19] = J54+J44;
 
         odom_trans.header.stamp = ros::Time::now();
         odom_trans.transform.translation.x = 0;

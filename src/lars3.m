@@ -18,24 +18,34 @@ sub(12) = rossubscriber('/status_23');
 sub(13) = rossubscriber('/status_33');
 sub(14) = rossubscriber('/status_43');
 sub(15) = rossubscriber('/status_53');
+sub(16) = rossubscriber('/status_14');
+sub(17) = rossubscriber('/status_24');
+sub(18) = rossubscriber('/status_34');
+sub(19) = rossubscriber('/status_44');
+sub(20) = rossubscriber('/status_54');
 sub_joints = rossubscriber('/joint_states');
     
 [pub,msg] = rospublisher('/setpoints','movemaster_msg/setpoint');
 [pub2,msg2] = rospublisher('/setpoints2','movemaster_msg/setpoint');
 [pub3,msg3] = rospublisher('/setpoints3','movemaster_msg/setpoint');
+[pub4,msg4] = rospublisher('/setpoints4','movemaster_msg/setpoint');
 [pub_hanoi,msg_hanoi] = rospublisher('/hanoi_status','std_msgs/Int32MultiArray');
 [pub_hanoi2,msg_hanoi2] = rospublisher('/hanoi_status2','std_msgs/Int32MultiArray');
 [pub_hanoi3,msg_hanoi3] = rospublisher('/hanoi_status3','std_msgs/Int32MultiArray');
+[pub_hanoi4,msg_hanoi4] = rospublisher('/hanoi_status4','std_msgs/Int32MultiArray');
 
 vetor_desenho = [1 2 3 7 8 9];
 vetor_desenho2 = [1 2 3 7 8 9];
 vetor_desenho3 = [1 2 3 7 8 9];
+vetor_desenho4 = [1 2 3 7 8 9];
 msg_hanoi.Data = vetor_desenho;
 msg_hanoi2.Data = vetor_desenho2;
 msg_hanoi3.Data = vetor_desenho3;
+msg_hanoi4.Data = vetor_desenho4;
 send(pub_hanoi,msg_hanoi);
 send(pub_hanoi2,msg_hanoi2);
 send(pub_hanoi3,msg_hanoi3);
+send(pub_hanoi4,msg_hanoi4);
 
 %% pontos
 
@@ -240,6 +250,71 @@ vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
 vetor_posicoes3 = [vetor_posicoes3;vetor_posicoes_novo3];
 vetor_desenho3 = [vetor_desenho3;vetor_desenho_novo3];
 
+%robo4
+
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,9,10,vetor_desenho4)];
+vetor_posicoes4 = vetor_posicoes_novo4;
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(3,3,9,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(2,2,4,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(3,9,5,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(5,8,2,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,10,3,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(4,7,10,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,3,7,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(5,2,11,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,7,12,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(1,1,7,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,12,1,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(5,11,8,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,1,9,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(4,10,1,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,9,10,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(5,8,2,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(3,5,3,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(2,4,8,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(3,3,9,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
+[vetor_posicoes_novo4, vetor_desenho_novo4] = [criapontos(6,10,3,vetor_desenho4(end,:))];
+vetor_posicoes4 = [vetor_posicoes4;vetor_posicoes_novo4];
+vetor_desenho4 = [vetor_desenho4;vetor_desenho_novo4];
 
 
 %% IK
@@ -257,6 +332,7 @@ for i = 1:length(vetor_posicoes)
     goal_pos = [465;vetor_posicoes(i,1);vetor_posicoes(i,2)];
     goal_pos2 = [465;vetor_posicoes2(i,1);vetor_posicoes2(i,2)];
     goal_pos3 = [465;vetor_posicoes3(i,1);vetor_posicoes3(i,2)];
+    goal_pos4 = [465;vetor_posicoes4(i,1);vetor_posicoes4(i,2)];
     ori_angle = deg2rad(90); % Calculations in radians, to the Movemaster in degrees.
     
     % Computes the inverse kinematics.
@@ -265,9 +341,11 @@ for i = 1:length(vetor_posicoes)
     [theta, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos, ori_angle);
     [theta2, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos2, ori_angle);
     [theta3, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos3, ori_angle);
+    [theta4, ~, valid] = MovemasterIK_PosAndOri(home, goal_pos4, ori_angle);
     theta_deg = wrapTo180(rad2deg(theta));
     theta_deg2 = wrapTo180(rad2deg(theta2));
     theta_deg3 = wrapTo180(rad2deg(theta3));
+    theta_deg4 = wrapTo180(rad2deg(theta4));
     
     if goal_pos(1) < 10
         valid= false;
@@ -301,15 +379,24 @@ for i = 1:length(vetor_posicoes)
         msg3.Set3 = theta_deg3(3);
         msg3.Set4 = theta_deg3(4);
         msg3.Set5 = theta_deg3(5) - theta_deg3(4);
+
+        msg4.GoHome = 0;
+        msg4.Set1 = theta_deg4(1);
+        msg4.Set2 = theta_deg4(2);
+        msg4.Set3 = theta_deg4(3);
+        msg4.Set4 = theta_deg4(4);
+        msg4.Set5 = theta_deg4(5) - theta_deg4(4);
     
         %send(pub,msg);
         %send(pub2,msg2);
         %send(pub3,msg3);
+        %send(pub4,msg4);
         
         i
         theta_save(i,:) = theta_deg;
         theta_save2(i,:) = theta_deg2;
         theta_save3(i,:) = theta_deg3;
+        theta_save4(i,:) = theta_deg4;
 
         %msg_hanoi.Data = vetor_desenho(ceil((i+2)/6),:);
         %send(pub_hanoi,msg_hanoi);
@@ -317,8 +404,11 @@ for i = 1:length(vetor_posicoes)
         %send(pub_hanoi2,msg_hanoi2);
         %msg_hanoi3.Data = vetor_desenho3(ceil((i+2)/6),:);
         %send(pub_hanoi3,msg_hanoi3);
+        %msg_hanoi4.Data = vetor_desenho4(ceil((i+2)/6),:);
+        %send(pub_hanoi4,msg_hanoi4);
+
     end
     %pause(0.8);
 end
 
-save('trajetorias.mat','theta_save','theta_save2','theta_save3','vetor_desenho','vetor_desenho2','vetor_desenho3');
+save('trajetorias.mat','theta_save','theta_save2','theta_save3', 'theta_save4','vetor_desenho','vetor_desenho2','vetor_desenho3','vetor_desenho4');
