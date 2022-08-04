@@ -76,6 +76,6 @@ for i = 1:length(theta_save)
     msg_hanoi4.Data = vetor_desenho4(ceil((i+2)/6),:);
     send(pub_hanoi4,msg_hanoi4);
     
-    pause(0.5);
+    pause(5);
 
 end

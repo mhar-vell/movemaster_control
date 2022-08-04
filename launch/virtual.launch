@@ -5,11 +5,11 @@
         <node name="state_publisher" pkg="movemaster_control" type="state_publisher" output="screen"/>
         <node type="rviz" name="rviz" pkg="rviz" args="-d $(find movemaster_control)/rviz/display.rviz" />
 
-        <node name="simulate_status_virtual" pkg="movemaster_control" type="simulate_status" output="screen"/>
+        <node name="simulate_status_virtual" pkg="movemaster_control" type="simulate_status_virtual" output="screen"/>
 
         <node name="hanoi_tf" pkg="movemaster_control" type="hanoi_tf" output="screen"/>
 
         <node name="usb_cam_node" pkg="usb_cam" type="usb_cam_node" output="screen"/>
-        <node pkg="tf" type="static_transform_publisher" name="usb_cam_tf" args="0.4 -0.4 0.25 0 0 -1.57 Base head_camera 10" />
+        <node pkg="tf" type="static_transform_publisher" name="usb_cam_tf" args="0.4 -0.6 0.25 0 0 -1.57 Base head_camera 10" />
 
 </launch>
