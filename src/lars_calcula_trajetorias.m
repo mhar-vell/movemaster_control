@@ -34,7 +34,7 @@ sub_joints = rossubscriber('/joint_states');
 [pub_hanoi3,msg_hanoi3] = rospublisher('/hanoi_status3','std_msgs/Int32MultiArray');
 [pub_hanoi4,msg_hanoi4] = rospublisher('/hanoi_status4','std_msgs/Int32MultiArray');
 
-vetor_desenho = [1 2 3 7 8 9];
+vetor_desenho = [1 1 1 1 1 1];
 vetor_desenho2 = [1 2 3 7 8 9];
 vetor_desenho3 = [1 2 3 7 8 9];
 vetor_desenho4 = [1 2 3 7 8 9];
@@ -51,69 +51,64 @@ send(pub_hanoi4,msg_hanoi4);
 
 %robo1
 
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,9,10,vetor_desenho)];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(4,1,7,vetor_desenho)];
 vetor_posicoes = vetor_posicoes_novo;
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,3,9,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(2,2,4,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,9,5,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,8,2,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,10,3,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(4,7,10,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,3,7,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,2,11,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,7,12,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(1,1,7,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,12,1,vetor_desenho(end,:))];
-vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
-vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,11,8,vetor_desenho(end,:))];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,1,8,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
 [vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,1,9,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(4,10,1,vetor_desenho(end,:))];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(1,1,1,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,9,10,vetor_desenho(end,:))];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(2,1,2,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(5,8,2,vetor_desenho(end,:))];
+[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,1,3,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo]; % move 6
+
+% completando 21 movimentos
+vetor_posicoes_novo = [-133 200;
+                        -133 200;
+                        -133 200;
+                        -133 200;
+                        -133 200;
+                        -133 200];
+vetor_desenho_novo = [1 2 3 7 8 9];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,5,3,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(2,4,8,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(3,3,9,vetor_desenho(end,:))];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo]; % move 10
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
-[vetor_posicoes_novo, vetor_desenho_novo] = [criapontos(6,10,3,vetor_desenho(end,:))];
 vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
 vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo]; % move 15
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo];
+vetor_posicoes = [vetor_posicoes;vetor_posicoes_novo];
+vetor_desenho = [vetor_desenho;vetor_desenho_novo]; % move 21
+
 
 % robo2
 
