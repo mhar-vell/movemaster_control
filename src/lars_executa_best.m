@@ -28,6 +28,7 @@ send(pub_hanoi4,msg_hanoi4);
 for i = 1:length(theta_save)
 
     theta_deg = theta_save3(i,:);
+    theta_deg3 = theta_save3(i,:);
 
     % Movemaster
     
@@ -37,11 +38,22 @@ for i = 1:length(theta_save)
     msg.Set3 = theta_deg(3);
     msg.Set4 = theta_deg(4);
     msg.Set5 = theta_deg(5) - theta_deg(4);
+
+    msg3.GoHome = 0;
+    msg3.Set1 = theta_deg3(1);
+    msg3.Set2 = theta_deg3(2);
+    msg3.Set3 = theta_deg3(3);
+    msg3.Set4 = theta_deg3(4);
+    msg3.Set5 = theta_deg3(5) - theta_deg3(4);
     
     send(pub,msg);
+    send(pub3,msg3);
 
     msg_hanoi.Data = vetor_desenho3(ceil((i+2)/6),:);
     send(pub_hanoi,msg_hanoi);
+
+    msg_hanoi3.Data = vetor_desenho3(ceil((i+2)/6),:);
+    send(pub_hanoi3,msg_hanoi3);
     
     pause(3.5);
     
