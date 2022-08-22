@@ -2,31 +2,6 @@ xhost +SI:localuser:root
 
 ARTIGO:
 
-- abstract
-2 dt
-    - organizar melhor a parte de digital twin com manipuladores, talvez tabela/síntese dos trabalhos agrupados em categorias
-3 sistema proposto
-    - 1/2 a 1 pag
-    - fazer figura esquema dos varios robos simulados e 1 deles sendo acoplado
-5 experimentos
-    - realizar parte pratica
-    - filmagem da parte pratica
-6 discussao
-    - indicadores e graficos: deslocamento? esforço das juntas? ou algo parecido para demonstrar ao longo do tempo os modelos realizando a tarefa com algoritmos diferentes (talvez sobreposto, e depois colocar o robo real junto com o vencedor)
-7 conclusao
-
-
-------------------------------------------------------------
-
-- robos e torre de hanoi - gazebo e coppelia
-- ver no outro arquivo matlab (nao demo) se ja tem algo com as trajetorias, se nao tiver fazer um programa simples no matlab mesmo pra criar n pontos entre dois pontos
-
-1:
-- video das instrucoes;
-- instalar câmera lateral, detectar posição para o modelo virtual ser a base a ser seguida (tags talvez?), movimento de transporte de caixas/objetos virtual;
-- talvez nos dois modos, digital shadow (virtual seguindo o real) e outro modo (real seguindo o virtual);
-
-2:
-- procurar na literatura programa para digital twin;
-- terminar estudo especial;
-- ligar monitor, teclado e mouse no robô móvel com braço robótico para ver o que tem;
+conveyor belt stl
+gazebo
+fazer rotina robo de movimentos com o manipualdor sempre em 90 graus
