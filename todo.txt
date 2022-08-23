@@ -2,6 +2,15 @@ xhost +SI:localuser:root
 
 ARTIGO:
 
-conveyor belt stl
-gazebo
-fazer rotina robo de movimentos com o manipualdor sempre em 90 graus
+conveyor belt stl com caixas
+passar para gazebo
+modelo hierárquico de sistemas
+fazer rotina robo de movimentos com o manipualdor sempre em 90 graus (para jonatas)
+
+avanços digital twin na robótica
+icps ieee
+indin ieee
+icit ieee
+indin março 2023 submissao
+ieee transaction informatics
+ieee transaction electronics
