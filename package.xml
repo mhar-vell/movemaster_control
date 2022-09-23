@@ -15,6 +15,9 @@
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
 
+  <exec_depend>gazebo_ros</exec_depend>
+  <export> <gazebo_ros gazebo_model_path="${prefix}/3D_Models"/> <gazebo_ros gazebo_media_path="${prefix}/3D_Models"/> </export>
+
   <depend>movemaster_msg</depend>
 
 </package>

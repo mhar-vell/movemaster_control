@@ -3,7 +3,6 @@ xhost +SI:localuser:root
 conveyor belt stl com caixas
 passar para gazebo
 modelo hierárquico de sistemas
-fazer rotina robo de movimentos com o manipualdor sempre em 90 graus
 
 avanços digital twin na robótica
 icps ieee

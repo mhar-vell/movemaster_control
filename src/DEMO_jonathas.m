@@ -110,6 +110,66 @@ end
 
 
 
+%% Centro do objeto
+
+
+%Leitura dos sensores
+%clc;
+%clearvars;
+%close all;
+
+scandata = rosmessage('std_msgs/Float32');
+sensor1 = rossubscriber('/sensor1');
+sensor2 = rossubscriber('/sensor2');
+sensor3 = rossubscriber('/sensor3');
+sensor4 = rossubscriber('/sensor4');
+sensor5 = rossubscriber('/sensor5');
+sensor6 = rossubscriber('/sensor6');
+sensor7 = rossubscriber('/sensor7');
+sensor8 = rossubscriber('/sensor8');
+sensor9 = rossubscriber('/sensor9');
+
+
+    s(1) = receive(sensor1, 5);
+    s(2) = receive(sensor2, 5);
+    s(3) = receive(sensor3, 5);
+    s(4) = receive(sensor4, 5);
+    s(5) = receive(sensor5, 5);
+    s(6) = receive(sensor6, 5);
+    s(7) = receive(sensor7, 5);
+    s(8) = receive(sensor8, 5);
+    s(9) = receive(sensor9, 5);
+    ab = s(3).Data
+    ac = s(7).Data
+%for i=1:1:9
+while ab<=50 && ac<=50
+
+    s(3) = receive(sensor3, 5);
+    s(7) = receive(sensor7, 5);
+    ab = s(3).Data
+    ac = s(7).Data
+    
+    msg.Set1 = msg.Set1 +2
+    send(pub,msg)
+end    
+
+while (ab>50 && ac>50) && (ab<130 || ac<130)
+
+    s(3) = receive(sensor3, 5);
+    s(7) = receive(sensor7, 5);
+    ab = s(3).Data
+    ac = s(7).Data
+    
+    msg.Set1 = msg.Set1 -2
+    send(pub,msg)
+
+
+end
+
+    msg.Set1 = 0;
+    send(pub,msg)
+
+disp("*******Simulação Encerrada*******");
 
 
 
