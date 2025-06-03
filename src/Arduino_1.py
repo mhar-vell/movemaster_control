@@ -45,7 +45,7 @@ if __name__=="__main__":
     rospy.init_node("Arduino_1")
     rospy.loginfo("ROS Serial Python Node")
 
-    port_name = rospy.get_param('~port','/dev/ttyACM2')
+    port_name = rospy.get_param('~port','/dev/ttyUSB2')
     baud = int(rospy.get_param('~baud','57600'))
 
     # Number of seconds of sync failure after which Arduino is auto-reset.

@@ -1,10 +1,16 @@
 xhost +SI:localuser:root
 
 conveyor belt stl com caixas
-passar para gazebo
-modelo hierárquico de sistemas
+passar para gazebo ou coppelia
+refazer stl
 
+
+
+
+modelo hierárquico de sistemas
 avanços digital twin na robótica
+
+congressos:
 icps ieee
 indin ieee
 icit ieee

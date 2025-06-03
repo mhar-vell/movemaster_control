@@ -1,0 +1,33 @@
+<launch>
+    <!-- <node name="angles" pkg="movemaster_control" type="angles" output="screen" required="true"/> -->
+	<node name="Arduino_1" pkg="movemaster_control" type="Arduino_1.py"/>
+	<node name="Arduino_2" pkg="movemaster_control" type="Arduino_2.py"/>
+	<node name="Arduino_3" pkg="movemaster_control" type="Arduino_3.py"/>
+
+    <node name="draw_square_cpp" pkg="movemaster_control" type="draw_square_cpp" output="screen"/>
+
+    <!-- <node name="draw_square_2" pkg="movemaster_control" type="draw_square_2.py" output="screen"/> -->
+
+    <!-- <param name="robot_description" command="cat $(find movemaster_control)/src/movemaster_urdf.xml" /> -->
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
+    
+    <!-- <node pkg="setpoints" type="movemaster_msg" name="setpoints" args="pub /setpoints movemaster_msg/setpoint {set_1: 0, set_2: 0, set_3: -91.5, set_4: 0, set_5: 90, set_GRIP: false, emergency_stop: false, GoHome: 0}"/> -->
+ 
+    <node name="state_publisher" pkg="movemaster_control" type="state_publisher" output="screen"/>
+
+    <!-- <node name="draw_square_2" pkg="movemaster_control" type="draw_square_2.py" output="screen"/> -->
+    <!-- <param name="/use_sim_time" value="true" /> -->
+
+
+    <!-- <node name="draw_square" pkg="movemaster_control" type="draw_square.py" output="screen"/> -->
+
+    <!-- <node pkg="rostopic" type="rostopic" name="setpoint_pub_1" args="pub -r 2 /setpoints movemaster_msg/setpoint '{set_1: 40.0, set_2: 104.0, set_3: -91.5, set_4: 0, set_5: 5, set_GRIP: false, emergency_stop: false, GoHome: 0}'"/>
+
+    <node pkg="rostopic" type="rostopic" name="setpoint_pub_2" args="pub -r 3 /setpoints movemaster_msg/setpoint '{set_1: -40.0, set_2: 104.0, set_3: -91.5, set_4: 0, set_5: 5, set_GRIP: false, emergency_stop: false, GoHome: 0}'"/>
+
+    <node pkg="rostopic" type="rostopic" name="setpoint_pub_3" args="pub -r 4 /setpoints movemaster_msg/setpoint '{set_1: -40.0, set_2: 104.0, set_3: -81.5, set_4: 0, set_5: 5, set_GRIP: false, emergency_stop: false, GoHome: 0}'"/>
+
+    <node pkg="rostopic" type="rostopic" name="setpoint_pub_4" args="pub -r 5 /setpoints movemaster_msg/setpoint '{set_1: 40.0, set_2: 104.0, set_3: -81.5, set_4: 0, set_5: 5, set_GRIP: false, emergency_stop: false, GoHome: 0}'"/> -->
+
+    <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find movemaster_control)/rviz/display.rviz" /> -->
+</launch>
