@@ -47,7 +47,7 @@ if __name__=="__main__":
 
     # port_name = rospy.get_param('~port','/dev/ttyUSB2')
     # baud = int(rospy.get_param('~baud','57600'))
-    port_name = rospy.get_param('~port','/dev/tty.usbmodem213401')
+    port_name = rospy.get_param('~port','/dev/tty.usbmodem2134018')
     baud = int(rospy.get_param('~baud','57600'))
 
     # Number of seconds of sync failure after which Arduino is auto-reset.
