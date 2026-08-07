@@ -1,0 +1,14 @@
+<launch>
+  <!-- Run the preflight check node -->
+  <node pkg="movemaster_control" type="preflight.py" name="preflight_check" output="screen">
+    <!-- Test parameters -->
+    <param name="test_magnitude" value="3.0" />          <!-- degrees for movement test -->
+    <param name="encoder_threshold" value="10.0" />      <!-- min encoder pulses to detect movement -->
+    <param name="timeout_connect" value="5.0" />         <!-- seconds to wait for status topics -->
+    <param name="timeout_move" value="8.0" />            <!-- seconds to wait for joint movement -->
+    <param name="test_joints" value="1,2,3,4,5,6" />     <!-- comma-separated joint numbers to test -->
+    <param name="test_encoders" value="true" />          <!-- test encoder response -->
+    <param name="test_limit_switches" value="true" />    <!-- test limit switch reading -->
+    <param name="test_motors" value="true" />            <!-- test motor movement -->
+  </node>
+</launch>
